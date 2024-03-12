@@ -855,3 +855,520 @@ void change(Dog& a, Dog& b)
 	a = b;
 	b = tmp;
 }
+
+================================================
+STL.cpp:, 2024-03-12 화요일 오후 2:03:09
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 12일 화요일			(2주 1일)
+// 
+// 많은 수의 데이터를 처리할 수 있어야...
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <random>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 생성하라.
+// [0, 9'9999] 범위의 값을 int 100개에 할당하라.
+// 화면에 값을 출력한다.
+
+std::default_random_engine dre;
+std::uniform_int_distribution uid(0, 99999);
+
+//--------
+int main()
+//--------
+{
+	int a[100];		// 앞으로 T[N] 은 사용하지 않는다.
+	
+	for (int i = 0; i < 100; i++)
+		a[i] = uid(dre);
+
+	for (int i = 0; i < 100; i++)
+		std::cout << a[i] << '\t';
+	std::cout << '\n';
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-12 화요일 오후 2:04:52
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 12일 화요일			(2주 1일)
+// 
+// 많은 수의 데이터를 처리할 수 있어야...
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <random>
+#include <format>	// C++
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 생성하라.
+// [0, 9'9999] 범위의 값을 int 100개에 할당하라.
+// 화면에 값을 출력한다.
+
+std::default_random_engine dre;
+std::uniform_int_distribution uid(0, 99999);
+
+//--------
+int main()
+//--------
+{
+	int a[100];		// 앞으로 T[N] 은 사용하지 않는다.
+	
+	for (int i = 0; i < 100; i++)
+		a[i] = uid(dre);
+
+	for (int i = 0; i < 100; i++)
+		std::cout << std::format("{:80}", a[i]);
+	std::cout << '\n';
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-12 화요일 오후 2:05:29
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 12일 화요일			(2주 1일)
+// 
+// 많은 수의 데이터를 처리할 수 있어야...
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <random>
+#include <format>	// C++
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 생성하라.
+// [0, 9'9999] 범위의 값을 int 100개에 할당하라.
+// 화면에 값을 출력한다.
+
+std::default_random_engine dre;
+std::uniform_int_distribution uid(0, 99999);
+
+//--------
+int main()
+//--------
+{
+	int a[100];		// 앞으로 T[N] 은 사용하지 않는다.
+	
+	for (int i = 0; i < 100; i++)
+		a[i] = uid(dre);
+
+	for (int i = 0; i < 100; i++)
+		std::cout << std::format("{:8}", a[i]);
+	std::cout << '\n';
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-12 화요일 오후 2:07:30
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 12일 화요일			(2주 1일)
+// 
+// 많은 수의 데이터를 처리할 수 있어야...
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <random>
+#include <format>	// C++20
+#include <print>	// C++23
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 생성하라.
+// [0, 9'9999] 범위의 값을 int 100개에 할당하라.
+// 화면에 값을 출력한다.
+
+std::default_random_engine dre;
+std::uniform_int_distribution uid(0, 99999);
+
+//--------
+int main()
+//--------
+{
+	int a[100];		// 앞으로 T[N] 은 사용하지 않는다.
+	
+	for (int i = 0; i < 100; i++)
+		a[i] = uid(dre);
+
+	for (int i = 0; i < 100; i++)
+		std::print(std::cout, "{:8}", a[i]);
+	std::cout << '\n';
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-12 화요일 오후 2:13:38
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 12일 화요일			(2주 1일)
+// 
+// 많은 수의 데이터를 처리할 수 있어야...
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <random>
+#include <format>	// C++20
+#include <print>	// C++23
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 생성하라.
+// [0, 9'9999] 범위의 값을 int 100개에 할당하라.
+// 화면에 값을 출력한다.
+
+std::default_random_engine dre;
+std::uniform_int_distribution uid(0, 99999);
+
+//--------
+int main()
+//--------
+{
+	int a[100];		// 앞으로 T[N] 은 사용하지 않는다.
+	
+	for (int& num : a)
+		num = uid(dre);
+
+	for (int num : a)
+		std::print(std::cout, "{:8}", num);
+	std::cout << '\n';
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-12 화요일 오후 2:20:00
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 12일 화요일			(2주 1일)
+// 
+// 많은 수의 데이터를 처리할 수 있어야...
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <random>
+#include <format>	// C++20
+#include <print>	// C++23
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 생성하라.
+// [0, 9'9999] 범위의 값을 int 100개에 할당하라.
+// 화면에 값을 출력한다.
+
+std::default_random_engine dre;
+std::uniform_int_distribution uid(0, 99999);
+
+//--------
+int main()
+//--------
+{
+	int a[100];		// 앞으로 T[N] 은 사용하지 않는다.
+	
+	for (int& num : a)
+		num = uid(dre);
+
+	for (int num : a)
+		std::print(std::cout, "{:8}", num);
+	std::cout << '\n';
+
+	// [문제2] a의 값 중 가장 큰 값을 찾아 화면에 출력하라.
+
+	for (int i = 0; i < 100; i++)
+	{
+		for (int j = 0; j < 100; j++)
+		{
+			if (a[i] > a[j])
+			{
+				int tmp = a[i];
+				a[i] = a[j];
+				a[j] = tmp;
+			}
+		}
+	}
+
+	std::cout << "가장 큰 값: " << a[99] << '\n';
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-12 화요일 오후 2:25:11
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 12일 화요일			(2주 1일)
+// 
+// 많은 수의 데이터를 처리할 수 있어야...
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <random>
+#include <format>	// C++20
+#include <print>	// C++23
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 생성하라.
+// [0, 9'9999] 범위의 값을 int 100개에 할당하라.
+// 화면에 값을 출력한다.
+
+std::default_random_engine dre;
+std::uniform_int_distribution uid(0, 99999);
+
+//--------
+int main()
+//--------
+{
+	int a[100];		// 앞으로 T[N] 은 사용하지 않는다.
+	
+	for (int& num : a)
+		num = uid(dre);
+
+	for (int num : a)
+		std::print(std::cout, "{:8}", num);
+	std::cout << '\n';
+
+	// [문제2] a의 값 중 가장 큰 값을 찾아 화면에 출력하라.
+	int maxValue = std::numeric_limits<int>::min();
+
+	for (int num : a) {
+		if (num > maxValue)
+			maxValue = num;
+	}
+
+	std::cout << "최댓값: " << maxValue << '\n';
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-12 화요일 오후 2:35:32
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 12일 화요일			(2주 1일)
+// 
+// 많은 수의 데이터를 처리할 수 있어야...
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <random>
+#include <format>	// C++20
+#include <print>	// C++23
+#include <algorithm>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 생성하라.
+// [0, 9'9999] 범위의 값을 int 100개에 할당하라.
+// 화면에 값을 출력한다.
+
+std::default_random_engine dre;
+std::uniform_int_distribution uid(0, 99999);
+
+//--------
+int main()
+//--------
+{
+	int a[100];		// 앞으로 T[N] 은 사용하지 않는다.
+	
+	for (int& num : a)
+		num = uid(dre);
+
+	for (int num : a)
+		std::print(std::cout, "{:8}", num);
+	std::cout << '\n';
+
+	// [문제2] a의 값 중 가장 큰 값을 찾아 화면에 출력하라.
+	auto pos = std::max_element( std::begin(a), std::end(a) );
+	std::cout << "최댓값: " << *pos << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-12 화요일 오후 2:36:31
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 12일 화요일			(2주 1일)
+// 
+// 많은 수의 데이터를 처리할 수 있어야...
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <random>
+#include <format>	// C++20
+#include <print>	// C++23
+#include <algorithm>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 생성하라.
+// [0, 9'9999] 범위의 값을 int 100개에 할당하라.
+// 화면에 값을 출력한다.
+
+std::default_random_engine dre;
+std::uniform_int_distribution uid(0, 99999);
+
+//--------
+int main()
+//--------
+{
+	int a[100];		// 앞으로 T[N] 은 사용하지 않는다.
+	
+	for (int& num : a)
+		num = uid(dre);
+
+	for (int num : a)
+		std::print(std::cout, "{:8}", num);
+	std::cout << '\n';
+
+	// [문제2] a의 값 중 가장 큰 값을 찾아 화면에 출력하라.
+	//auto pos = std::max_element( std::begin(a), std::end(a) );
+	//std::cout << "최댓값: " << *pos << std::endl;	// 역참조 오퍼레이터
+	std::cout << *std::max_element(std::begin(a), std::end(a)) << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-12 화요일 오후 2:59:35
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 12일 화요일			(2주 1일)
+// 
+// 많은 수의 데이터를 처리할 수 있어야...
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <random>
+#include <array>
+#include <fstream>
+#include <format>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+std::default_random_engine dre;
+std::uniform_int_distribution uid(0, 99999);
+
+//--------
+int main()
+//--------
+{
+	std::array<int, 100> a;		// 앞으로 T[N] 은 사용하지 않는다. T[N] 대신 array<T, N>을 사용.
+	
+	for (int& num : a)
+		num = uid(dre);
+
+	// [문제] 파일 "int값들.txt"에서 a의 int값을 모두 저장하라.
+	std::ofstream out{ "int값들.txt" };			// RAII
+	for (int num : a)
+		print(out, "{:8}", num);
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-12 화요일 오후 3:06:26
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 12일 화요일			(2주 1일)
+// 
+// 많은 수의 데이터를 처리할 수 있어야...
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <fstream>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] "int값들.txt"에는 몇 개인지 모르는 int 값이 있다.
+// 그중 제일 큰 값을 찾아 화면에 출력하라.
+
+//--------
+int main()
+//--------
+{
+	std::ifstream in{ "int값들.txt" };
+	if (not in)
+		exit(0);
+
+	int num;
+	int cnt{};
+	int maxValue = std::numeric_limits<int>::min();
+
+	while (in >> num) {
+		++cnt;
+		if (maxValue < num)
+			maxValue = num;
+	}
+
+	std::cout << "int 개수 : " << cnt << std::endl;
+	std::cout << "최댓값 : " << maxValue << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-12 화요일 오후 3:08:54
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 12일 화요일			(2주 1일)
+// 
+// 많은 수의 데이터를 처리할 수 있어야...
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] "int값들.txt"에는 몇 개인지 모르는 int 값이 있다.
+// 그중 제일 큰 값을 찾아 화면에 출력하라.
+
+//--------
+int main()
+//--------
+{
+	std::ifstream in{ "int값들.txt" };
+	if (not in)
+		exit(0);
+
+	std::cout << *std::max_element(std::istream_iterator<int>{in}, {}) << std::endl;
+
+	save("STL.cpp");
+}
