@@ -2411,3 +2411,668 @@ int main()
 
 	save("STL.cpp");
 }
+
+
+================================================
+STL.cpp:, 2024-03-21 목요일 오후 1:38:26
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 21일 목요일			(3주 2일)
+// 
+// 실행파일의 메모리 구조 - 찾아보세요: STACK CODE DATA Free Store
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+//--------
+int main()
+//--------
+{
+	std::array<int, 10> a;
+	std::cout << "STACK" << std::endl;
+	std::cout << "array<int,10> - " << std::addressof(a) << std::endl;
+	std::cout << "a[0] - a[9]" << std::endl;
+	
+	for (int& num : a)
+		std::cout << std::addressof(num) << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-21 목요일 오후 1:41:00
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 21일 목요일			(3주 2일)
+// 
+// 실행파일의 메모리 구조 - 찾아보세요: STACK CODE DATA Free Store
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <string>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+//--------
+int main()
+//--------
+{
+	std::array<int, 10> a;
+	std::cout << "STACK" << std::endl;
+	std::cout << "array<int,10> - " << std::addressof(a) << std::endl;
+	std::cout << "a[0] - a[9]" << std::endl;
+	
+	for (int& num : a)
+		std::cout << std::addressof(num) << std::endl;
+
+	std::cout << std::endl;
+	std::string s{ "스트링" };
+	std::cout << std::addressof(s) << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-21 목요일 오후 1:45:43
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 21일 목요일			(3주 2일)
+// 
+// 실행파일의 메모리 구조 - 찾아보세요: STACK CODE DATA Free Store
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <string>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+//--------
+int main()
+//--------
+{
+	std::array<int, 10> a;
+	std::cout << "STACK" << std::endl;
+	std::cout << "array<int,10> - " << std::addressof(a) << std::endl;
+	std::cout << "a[0] - a[9]" << std::endl;
+	
+	for (int& num : a)
+		std::cout << std::addressof(num) << std::endl;
+
+	std::cout << std::endl;
+	std::string s{ "스트링" };
+	std::cout << std::addressof(s) << std::endl;
+
+	std::cout << std::endl;
+	int num;
+	std::cout << std::addressof(num) << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-21 목요일 오후 1:46:51
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 21일 목요일			(3주 2일)
+// 
+// 실행파일의 메모리 구조 - 찾아보세요: STACK CODE DATA Free Store
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <string>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+//--------
+int main()
+//--------
+{
+	std::cout << std::endl;
+	int num;
+	std::cout << std::addressof(num) << std::endl;
+
+	std::array<int, 10> a;
+	std::cout << "STACK" << std::endl;
+	std::cout << "array<int,10> - " << std::addressof(a) << std::endl;
+	std::cout << "a[0] - a[9]" << std::endl;
+	
+	for (int& num : a)
+		std::cout << std::addressof(num) << std::endl;
+
+	std::cout << std::endl;
+	std::string s{ "스트링" };
+	std::cout << std::addressof(s) << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-21 목요일 오후 1:51:42
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 21일 목요일			(3주 2일)
+// 
+// 실행파일의 메모리 구조 - 찾아보세요: STACK CODE DATA Free Store
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <string>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+void f()
+{
+	int num;
+	std::cout << std::addressof(num) << std::endl;
+}
+
+//--------
+int main()
+//--------
+{
+	// 이들은 같은 동네임
+	int num;
+	std::cout << std::addressof(num) << std::endl;
+
+	std::array<int, 10> a;
+	std::string s{ "스트링" };
+
+	f();
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-21 목요일 오후 1:52:37
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 21일 목요일			(3주 2일)
+// 
+// 실행파일의 메모리 구조 - 찾아보세요: STACK CODE DATA Free Store
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <string>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+void f(int a)
+{
+	int num;
+	std::cout << std::addressof(num) << std::endl;
+	std::cout << a << std::endl;
+}
+
+//--------
+int main()
+//--------
+{
+	// 이들은 같은 동네임
+	int num;
+	std::cout << std::addressof(num) << std::endl;
+
+	std::array<int, 10> a;
+	std::string s{ "스트링" };
+
+	f(123);
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-21 목요일 오후 1:53:34
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 21일 목요일			(3주 2일)
+// 
+// 실행파일의 메모리 구조 - 찾아보세요: STACK CODE DATA Free Store
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <string>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+void f(int a)
+{
+	int num;
+	std::cout << std::addressof(num) << std::endl;
+	std::cout << "인자 주소: " << std::addressof(a) << std::endl;
+}
+
+//--------
+int main()
+//--------
+{
+	// 이들은 같은 동네임
+	int num;
+	std::cout << std::addressof(num) << std::endl;
+
+	std::array<int, 10> a;
+	std::string s{ "스트링" };
+
+	f(123);
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-21 목요일 오후 1:53:47
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 21일 목요일			(3주 2일)
+// 
+// 실행파일의 메모리 구조 - 찾아보세요: STACK CODE DATA Free Store
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <string>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+void f(int a)
+{
+	int num;
+	std::cout << std::addressof(num) << std::endl;
+	std::cout << std::addressof(a) << std::endl;
+}
+
+//--------
+int main()
+//--------
+{
+	// 이들은 같은 동네임
+	int num;
+	std::cout << std::addressof(num) << std::endl;
+
+	std::array<int, 10> a;
+	std::string s{ "스트링" };
+
+	f(123);
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-21 목요일 오후 2:13:32
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 21일 목요일			(3주 2일)
+// 
+// 실행파일의 메모리 구조 - 찾아보세요: STACK CODE DATA Free Store
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <string>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+void f()
+{
+}
+
+//--------
+int main()
+//--------
+{
+	int num;
+	
+	(*f)();		// f();
+
+	std::cout << "STACK" << std::endl;
+	std::cout << "      - num " << std::addressof(num) << std::endl;
+
+	std::cout << std::endl;
+	std::cout << "CODE " << std::endl;
+	std::cout << "      - main" << std::addressof(main) << std::endl;
+	std::cout << "      - f   " << std::addressof(f) << std::endl;
+	std::cout << "      - save" << std::addressof(save) << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-21 목요일 오후 2:13:50
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 21일 목요일			(3주 2일)
+// 
+// 실행파일의 메모리 구조 - 찾아보세요: STACK CODE DATA Free Store
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <string>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+void f()
+{
+}
+
+//--------
+int main()
+//--------
+{
+	int num;
+	
+	(*f)();		// f();
+
+	std::cout << "STACK" << std::endl;
+	std::cout << "      - num  " << std::addressof(num) << std::endl;
+
+	std::cout << std::endl;
+	std::cout << "CODE " << std::endl;
+	std::cout << "      - main " << std::addressof(main) << std::endl;
+	std::cout << "      - f    " << std::addressof(f) << std::endl;
+	std::cout << "      - save " << std::addressof(save) << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-21 목요일 오후 2:16:08
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 21일 목요일			(3주 2일)
+// 
+// 실행파일의 메모리 구조 - 찾아보세요: STACK CODE DATA Free Store
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <string>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+void f()
+{
+}
+
+//--------
+int main()
+//--------
+{
+	long long val{ 0x7F'FF'FF'FF'FF'FF };
+	std::cout << "사용할 수 있는 최대 메모리 한계 - " << val << std::endl;
+
+	int num;
+	
+	(*f)();		// f();
+
+	std::cout << "STACK" << std::endl;
+	std::cout << "      - num  " << std::addressof(num) << std::endl;
+
+	std::cout << std::endl;
+	std::cout << "CODE " << std::endl;
+	std::cout << "      - main " << std::addressof(main) << std::endl;
+	std::cout << "      - f    " << std::addressof(f) << std::endl;
+	std::cout << "      - save " << std::addressof(save) << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-21 목요일 오후 2:26:01
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 21일 목요일			(3주 2일)
+// 
+// 실행파일의 메모리 구조 - 찾아보세요: STACK CODE DATA Free Store
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+int num;
+
+//--------
+int main()
+//--------
+{
+	int num;
+	
+	std::cout << "STACK" << std::endl;
+	std::cout << "        - num  " << std::addressof(num) << std::endl;
+
+	std::cout << std::endl;
+	std::cout << "CODE " << std::endl;
+	std::cout << "        - main " << std::addressof(main) << std::endl;
+	std::cout << std::endl;
+
+	std::cout << "DATA " << std::endl;
+	std::cout << " global - num  " << std::addressof(::num) << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-21 목요일 오후 2:35:29
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 21일 목요일			(3주 2일)
+// 
+// 실행파일의 메모리 구조 - 찾아보세요: STACK CODE DATA Free Store
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+int num;
+
+//--------
+int main()
+//--------
+{
+	int num;
+
+	int* p = new int;
+	
+	std::cout << "STACK      " << std::addressof(num) << std::endl;
+	std::cout << "free store " << std::addressof(*p) << std::endl;
+	std::cout << "CODE       " << std::addressof(main) << std::endl;
+	std::cout << "DATA       " << std::addressof(::num) << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-21 목요일 오후 2:53:56
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 21일 목요일			(3주 2일)
+// 
+// 실행파일의 메모리 구조 - 찾아보세요: STACK CODE DATA Free Store
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+char c[0x7f'ff'ff'ff];
+
+//--------
+int main()
+//--------
+{
+	std::cout << "사용 가능한 최대 배열 크기 - " << 0x7f'ff'ff'ff << std::endl;
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-21 목요일 오후 2:55:24
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 21일 목요일			(3주 2일)
+// 
+// 실행파일의 메모리 구조 - 찾아보세요: STACK CODE DATA Free Store
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+char c1[0x7f'ff'ff'ff];
+char c2[0x7f'ff'ff'ff];
+char c3[0x7f'ff'ff'ff];
+char c4[0x7f'ff'ff'ff];
+
+//--------
+int main()
+//--------
+{
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-21 목요일 오후 3:02:15
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 21일 목요일			(3주 2일)
+// 
+// 실행파일의 메모리 구조 - 찾아보세요: STACK CODE DATA Free Store
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+char c1[0x6f'ff'ff'ff] { 1 };
+
+//--------
+int main()
+//--------
+{
+	c1[12345678] = 333;
+	std::cout << c1[12345678] << std::endl;
+	std::cout << c1 << std::endl;
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-21 목요일 오후 3:04:15
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 21일 목요일			(3주 2일)
+// 
+// 실행파일의 메모리 구조 - 찾아보세요: STACK CODE DATA Free Store
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+char c1[123456789] { 1 };
+char c2[1'000'000'000]{ 1 };
+char c3[1'000'000'000]{ 1 };
+char c4[1'000'000'000]{ 1 };
+
+//--------
+int main()
+//--------
+{
+	c1[12345678] = 333;
+	std::cout << c1[12345678] << std::endl;
+	std::cout << c1 << std::endl;
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-21 목요일 오후 3:06:01
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 21일 목요일			(3주 2일)
+// 
+// 실행파일의 메모리 구조 - 찾아보세요: STACK CODE DATA Free Store
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+int a[1'000'000];
+
+//--------
+int main()
+//--------
+{
+	std::cout << a[0] << std::endl;
+	std::cout << a[999'999] << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-21 목요일 오후 3:06:35
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 21일 목요일			(3주 2일)
+// 
+// 실행파일의 메모리 구조 - 찾아보세요: STACK CODE DATA Free Store
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+int a[1'000'000]{ 1 };		// 실행하는데 시간이 더 걸림
+
+//--------
+int main()
+//--------
+{
+	std::cout << a[0] << std::endl;
+	std::cout << a[999'999] << std::endl;
+
+	save("STL.cpp");
+}
