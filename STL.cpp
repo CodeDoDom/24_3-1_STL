@@ -1,72 +1,51 @@
 //------------------------------------------------------------------------
-// 2024.	1학기 STL 화56목56      3월 26일 화요일			(4주 1일)
+// 2024.	1학기 STL 화56목56      3월 28일 목요일			(4주 2일)
 // 
-// Free Store - RAII
-// 
-// C++ 언어에서 사용하지 않도록 권고
-// - char*		-->		string
-// - T[N]		-->		array<T,N>
-// - T*(raw *)	-->		unique_ptr, shared_ptr(스마트 포인터)
-// 
-// RAII - 메모리, FILE, jthread, mutex 등	(유튜브에 C++ RAII 검색)
+// callable type -> 정렬 예제에서 시작
 //------------------------------------------------------------------------
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
-#include <numeric>
-#include <thread>
+#include <array>
+#include <random>
+#include <print>
 #include "save.h"
 //using namespace std;	// 사용하지 않고 코딩
 
-// [문제] int num 값을 입력받아라.
-// free store에서 int를 num개 할당받아라.
-// int 값을 '1부터 시작하는 정수로 채워라.' iota()
-// int 값의 '합계'를 출력하라. 
-// 이 과정을 영원히 반복하라.
-// 해결하는 코드를 답지에 적어라.
+// [문제] int 100개를 저장할 공간을 확보하라.
+// int 100개의 값을 [1, 10000] 사이의 랜덤값으로 설정하라.
+// int 값 100개를 C의 qsort를 사용하여 오름차순으로 정렬하라.
+// 정렬결과를 한 줄에 10개씩 화면에 출력하라.
 
-class Dog {
-public:
-	Dog() {
-		std::cout << "생성" << std::endl;
-	}
-	~Dog() {
-		std::cout << "소멸" << std::endl;
-	}
-};
+std::array<int, 100> a;
+std::uniform_int_distribution uid{ 1, 10'000 };		//std::normal_distribution
+std::default_random_engine dre;
 
-class 스마트포인터 {
-	Dog* p;
-public:
-	스마트포인터(Dog* p) :p{ p } {}
-	~스마트포인터() {
-		delete p;
-	}
-};
-
-void f()
-{
-	std::cout << "f 시작" << std::endl;
-	스마트포인터 p(new Dog);
-
-	throw 1234;
-
-	std::cout << "f 끝" << std::endl;
-}
+int 정렬방법(const void* a, const void* b);
 
 //--------
 int main()
 //--------
 {
-	std::cout << "main 시작" << std::endl;
-	
-	try {
-		f();
-	}
-	catch (...) {			// ... elipses
-		std::cout << "예외를 받았어요." << std::endl;
-	}
-	
-	std::cout << "main 끝" << std::endl;
+	for (int& num : a)
+		num = uid(dre);
+
+	// 여기서 qsort로 오름차순 정렬한다. - qsort는 C 함수이지만, generic 함수이다.
+	//qsort(어디를, 몇 개를, 한 개의 크기는?, 너만의 정렬방법을 알려줘)
+
+	//qsort(a.data(), a.size(), sizeof(int), [](const void* a, const void* b) {
+	//	return *(int*)a - *(int*)b;
+	//	});
+	int(*함수)(const void*, const void*)= 정렬방법;		// 함수... 포인터..........(?)
+
+	qsort(a.data(), a.size(), sizeof(int), 함수);
+
+	for (int num : a)
+		std::print("{:8}", num);
 
 	save("STL.cpp");
+}
+
+int 정렬방법(const void* a, const void* b)
+{
+	return *(int*)a - *(int*)b;
 }

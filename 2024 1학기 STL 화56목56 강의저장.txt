@@ -4034,3 +4034,815 @@ int main()
 
 	save("STL.cpp");
 }
+
+
+================================================
+STL.cpp:, 2024-03-28 목요일 오후 1:37:23
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 28일 목요일			(4주 2일)
+// 
+// uniqe_ptr 사용 - 자원을 독점 소유(ownership)
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <memory>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+class Dog {
+public:
+	Dog() {
+		std::cout << "생성" << std::endl;
+	}
+	~Dog() {
+		std::cout << "소멸" << std::endl;
+	}
+};
+
+class 스마트포인터 {
+	Dog* p;
+public:
+	스마트포인터(Dog* p) :p{ p } {}
+	~스마트포인터() {
+		delete p;
+	}
+};
+
+void f()
+{
+	std::cout << "f 시작" << std::endl;
+	스마트포인터 p(new Dog);
+
+	throw 1234;
+
+	std::cout << "f 끝" << std::endl;
+}
+
+//--------
+int main()
+//--------
+{
+	// Dog를 free store에 만들어본다.
+
+	std::unique_ptr<Dog> p{new Dog};
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-28 목요일 오후 1:43:31
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 28일 목요일			(4주 2일)
+// 
+// uniqe_ptr 사용 - 자원을 독점 소유(ownership)
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <memory>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+class Dog {
+public:
+	Dog() {
+		std::cout << "생성" << std::endl;
+	}
+	~Dog() {
+		std::cout << "소멸" << std::endl;
+	}
+};
+
+class 스마트포인터 {
+	Dog* p;
+public:
+	스마트포인터(Dog* p) :p{ p } {}
+	~스마트포인터() {
+		delete p;
+	}
+};
+
+void f()
+{
+	std::cout << "f 시작" << std::endl;
+	스마트포인터 p(new Dog);
+
+	throw 1234;
+
+	std::cout << "f 끝" << std::endl;
+}
+
+//--------
+int main()
+//--------
+{
+	// Dog 10 객체를 free store에 만들어본다.
+
+	std::unique_ptr<Dog[]> p{new Dog[10]};
+
+	save("STL.cpp");
+
+	// 아래 문장 출력 후, p가 가리키는 객체가 소멸됨
+	std::cout << "메인 종료" << std::endl;
+}
+
+
+================================================
+STL.cpp:, 2024-03-28 목요일 오후 1:44:33
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 28일 목요일			(4주 2일)
+// 
+// uniqe_ptr 사용 - 자원을 독점 소유(ownership)
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <memory>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+class Dog {
+public:
+	Dog() {
+		std::cout << "생성" << std::endl;
+	}
+	~Dog() {
+		std::cout << "소멸" << std::endl;
+	}
+};
+
+class 스마트포인터 {
+	Dog* p;
+public:
+	스마트포인터(Dog* p) :p{ p } {}
+	~스마트포인터() {
+		delete p;
+	}
+};
+
+void f()
+{
+	std::cout << "f 시작" << std::endl;
+	스마트포인터 p(new Dog);
+
+	throw 1234;
+
+	std::cout << "f 끝" << std::endl;
+}
+
+//--------
+int main()
+//--------
+{
+	// Dog 10 객체를 free store에 만들어본다.
+
+	std::unique_ptr<Dog[]> p{new Dog[10]};
+
+	save("STL.cpp");
+
+	try {
+		throw 1;
+	}
+	catch (...) {
+
+	}
+
+	// 아래 문장 출력 후, p가 가리키는 객체가 소멸됨
+	std::cout << "메인 종료" << std::endl;
+}
+
+
+================================================
+STL.cpp:, 2024-03-28 목요일 오후 1:49:07
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 28일 목요일			(4주 2일)
+// 
+// uniqe_ptr 사용 - 자원을 독점 소유(ownership)
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <memory>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+class Dog {
+public:
+	Dog() {
+		std::cout << "생성" << std::endl;
+	}
+	~Dog() {
+		std::cout << "소멸" << std::endl;
+	}
+};
+
+class 스마트포인터 {
+	Dog* p;
+public:
+	스마트포인터(Dog* p) :p{ p } {}
+	~스마트포인터() {
+		delete p;
+	}
+};
+
+void f()
+{
+	std::cout << "f 시작" << std::endl;
+	스마트포인터 p(new Dog);
+
+	throw 1234;
+
+	std::cout << "f 끝" << std::endl;
+}
+
+//--------
+int main()
+//--------
+{
+	// 이 main()은 문제없지만 불편하다.	-> new와 짝이 되는 delete가 없기 때문이다.
+	// 편의함수 make_unique를 사용한다.
+	std::unique_ptr<Dog> p = std::make_unique<Dog>();
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-28 목요일 오후 1:50:10
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 28일 목요일			(4주 2일)
+// 
+// uniqe_ptr 사용 - 자원을 독점 소유(ownership)
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <memory>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+class Dog {
+public:
+	Dog() {
+		std::cout << "생성" << std::endl;
+	}
+	~Dog() {
+		std::cout << "소멸" << std::endl;
+	}
+};
+
+class 스마트포인터 {
+	Dog* p;
+public:
+	스마트포인터(Dog* p) :p{ p } {}
+	~스마트포인터() {
+		delete p;
+	}
+};
+
+void f()
+{
+	std::cout << "f 시작" << std::endl;
+	스마트포인터 p(new Dog);
+
+	throw 1234;
+
+	std::cout << "f 끝" << std::endl;
+}
+
+//--------
+int main()
+//--------
+{
+	// 이 main()은 문제없지만 불편하다.	-> new와 짝이 되는 delete가 없기 때문이다.
+	// 편의함수 make_unique를 사용한다.
+	std::unique_ptr<Dog[]> p = std::make_unique<Dog[]>( 10 );
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-28 목요일 오후 2:03:53
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 28일 목요일			(4주 2일)
+// 
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <fstream>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] "STL.cpp"를 읽어 모든 소문자를 대문자로 변환하여
+// "STL대문자.txt"에 저장하라.
+
+//--------
+int main()
+//--------
+{
+	std::ifstream in{ "STL.cpp", std::ios::binary };
+
+	if (not in)
+		return 1234567890;
+
+	char c;
+	while (in.read(&c, sizeof(char)))
+		std::cout << (c = toupper(c));		// toupper(): 전통적인 C 함수
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-28 목요일 오후 2:05:06
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 28일 목요일			(4주 2일)
+// 
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <fstream>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] "STL.cpp"를 읽어 모든 소문자를 대문자로 변환하여
+// "STL대문자.txt"에 저장하라.
+
+//--------
+int main()
+//--------
+{
+	std::ifstream in{ "STL.cpp", std::ios::binary };
+
+	if (not in)
+		return 1234567890;
+
+	std::ofstream out{ "STL대문자.txt" };
+
+	char c;
+	while (in.read(&c, sizeof(char)))
+		out << (c = toupper(c));		// toupper(): 전통적인 C 함수
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-28 목요일 오후 2:06:29
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 28일 목요일			(4주 2일)
+// 
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <fstream>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] "STL.cpp"를 읽어 모든 소문자를 대문자로 변환하여
+// "STL대문자.txt"에 저장하라.
+
+//--------
+int main()
+//--------
+{
+	std::ifstream in{ "STL.cpp", std::ios::binary };
+
+	if (not in)
+		return 1234567890;
+
+	std::ofstream out{ "STL대문자.txt", std::ios::binary };
+
+	char c;
+	while (in.read(&c, sizeof(char)))
+		out << (c = toupper(c));		// toupper(): 전통적인 C 함수
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-28 목요일 오후 2:19:58
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 28일 목요일			(4주 2일)
+// 
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] "STL.cpp"를 읽어 모든 소문자를 대문자로 *변환*하여
+// "STL대문자.txt"에 저장하라.
+
+//--------
+int main()
+//--------
+{
+	std::ifstream in{ "STL.cpp", std::ios::binary };
+
+	if (not in)
+		return 1234567890;
+
+	std::ofstream out{ "STL대문자.txt", std::ios::binary };
+
+	std::transform(std::istreambuf_iterator<char>{in}, {},
+		std::ostreambuf_iterator<char>{out}, [](char c) {
+			return toupper(c);
+		});
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-28 목요일 오후 2:20:01
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 28일 목요일			(4주 2일)
+// 
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] "STL.cpp"를 읽어 모든 소문자를 대문자로 *변환*하여
+// "STL대문자.txt"에 저장하라.
+
+//--------
+int main()
+//--------
+{
+	std::ifstream in{ "STL.cpp", std::ios::binary };
+
+	if (not in)
+		return 1234567890;
+
+	std::ofstream out{ "STL대문자.txt", std::ios::binary };
+
+	std::transform(std::istreambuf_iterator<char>{in}, {},
+		std::ostreambuf_iterator<char>{out}, [](char c) {
+			return toupper(c);
+		});
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-28 목요일 오후 2:22:58
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 28일 목요일			(4주 2일)
+// 
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] "STL.cpp"를 읽어 모든 소문자를 대문자로 *변환(transform())*하여
+// "STL대문자.txt"에 저장하라.
+
+//--------
+int main()
+//--------
+{
+	std::ifstream in{ "STL.cpp", std::ios::binary };
+
+	if (not in)
+		return 1234567890;
+
+	std::ofstream out{ "STL대문자.txt", std::ios::binary };
+
+	std::transform(std::istreambuf_iterator<char>{in}, {},
+		std::ostreambuf_iterator<char>{std::cout}, [](char c) {
+			return toupper(c);
+		});
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-28 목요일 오후 2:40:56
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 28일 목요일			(4주 2일)
+// 
+// callable type -> 정렬 예제에서 시작
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <random>
+#include <print>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 확보하라.
+// int 100개의 값을 [1, 10000] 사이의 랜덤값으로 설정하라.
+// int 값 100개를 C의 qsort를 사용하여 오름차순으로 정렬하라.
+// 정렬결과를 한 줄에 10개씩 화면에 출력하라.
+
+std::array<int, 100> a;
+std::uniform_int_distribution uid{ 1, 10'000 };		//std::normal_distribution
+std::default_random_engine dre;
+
+//--------
+int main()
+//--------
+{
+	for (int& num : a)
+		num = uid(dre);
+
+	for (int num : a)
+		std::print("{:8}", num);
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-28 목요일 오후 2:55:42
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 28일 목요일			(4주 2일)
+// 
+// callable type -> 정렬 예제에서 시작
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <random>
+#include <print>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 확보하라.
+// int 100개의 값을 [1, 10000] 사이의 랜덤값으로 설정하라.
+// int 값 100개를 C의 qsort를 사용하여 오름차순으로 정렬하라.
+// 정렬결과를 한 줄에 10개씩 화면에 출력하라.
+
+std::array<int, 100> a;
+std::uniform_int_distribution uid{ 1, 10'000 };		//std::normal_distribution
+std::default_random_engine dre;
+
+//--------
+int main()
+//--------
+{
+	for (int& num : a)
+		num = uid(dre);
+
+	// 여기서 qsort로 오름차순 정렬한다. - qsort는 C 함수이지만, generic 함수이다.
+	//qsort(어디를, 몇 개를, 한 개의 크기는?, 너만의 정렬방법을 알려줘)
+
+	int 정렬방법(const void*, const void*);
+	qsort(a.data(), a.size(), sizeof(int), 정렬방법);
+
+	for (int num : a)
+		std::print("{:8}", num);
+
+	save("STL.cpp");
+}
+int 정렬방법(const void* a, const void* b)
+{
+	return *(int*)a - * (int*)b;
+}
+
+
+================================================
+STL.cpp:, 2024-03-28 목요일 오후 3:00:37
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 28일 목요일			(4주 2일)
+// 
+// callable type -> 정렬 예제에서 시작
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <random>
+#include <print>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 확보하라.
+// int 100개의 값을 [1, 10000] 사이의 랜덤값으로 설정하라.
+// int 값 100개를 C의 qsort를 사용하여 오름차순으로 정렬하라.
+// 정렬결과를 한 줄에 10개씩 화면에 출력하라.
+
+std::array<int, 100> a;
+std::uniform_int_distribution uid{ 1, 10'000 };		//std::normal_distribution
+std::default_random_engine dre;
+
+//--------
+int main()
+//--------
+{
+	for (int& num : a)
+		num = uid(dre);
+
+	// 여기서 qsort로 오름차순 정렬한다. - qsort는 C 함수이지만, generic 함수이다.
+	//qsort(어디를, 몇 개를, 한 개의 크기는?, 너만의 정렬방법을 알려줘)
+
+	int 정렬방법(const void*, const void*);
+	qsort(a.data(), a.size(), sizeof(int), 정렬방법);
+	// 정렬방법은 code segment에 저장된 함수의 시작번지이다
+
+	for (int num : a)
+		std::print("{:8}", num);
+
+	save("STL.cpp");
+}
+int 정렬방법(const void* a, const void* b)
+{
+	return *(int*)b - * (int*)a;	// 내립차순
+}
+
+
+================================================
+STL.cpp:, 2024-03-28 목요일 오후 3:02:37
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 28일 목요일			(4주 2일)
+// 
+// callable type -> 정렬 예제에서 시작
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <random>
+#include <print>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 확보하라.
+// int 100개의 값을 [1, 10000] 사이의 랜덤값으로 설정하라.
+// int 값 100개를 C의 qsort를 사용하여 오름차순으로 정렬하라.
+// 정렬결과를 한 줄에 10개씩 화면에 출력하라.
+
+std::array<int, 100> a;
+std::uniform_int_distribution uid{ 1, 10'000 };		//std::normal_distribution
+std::default_random_engine dre;
+
+//--------
+int main()
+//--------
+{
+	for (int& num : a)
+		num = uid(dre);
+
+	// 여기서 qsort로 오름차순 정렬한다. - qsort는 C 함수이지만, generic 함수이다.
+	//qsort(어디를, 몇 개를, 한 개의 크기는?, 너만의 정렬방법을 알려줘)
+
+	qsort(a.data(), a.size(), sizeof(int), [](const void* a, const void* b) {
+		return *(int*)a - *(int*)b;
+		});
+
+	for (int num : a)
+		std::print("{:8}", num);
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-03-28 목요일 오후 3:07:11
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 28일 목요일			(4주 2일)
+// 
+// callable type -> 정렬 예제에서 시작
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <random>
+#include <print>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 확보하라.
+// int 100개의 값을 [1, 10000] 사이의 랜덤값으로 설정하라.
+// int 값 100개를 C의 qsort를 사용하여 오름차순으로 정렬하라.
+// 정렬결과를 한 줄에 10개씩 화면에 출력하라.
+
+std::array<int, 100> a;
+std::uniform_int_distribution uid{ 1, 10'000 };		//std::normal_distribution
+std::default_random_engine dre;
+
+int 정렬방법(const void* a, const void* b);
+
+//--------
+int main()
+//--------
+{
+	for (int& num : a)
+		num = uid(dre);
+
+	// 여기서 qsort로 오름차순 정렬한다. - qsort는 C 함수이지만, generic 함수이다.
+	//qsort(어디를, 몇 개를, 한 개의 크기는?, 너만의 정렬방법을 알려줘)
+
+	//qsort(a.data(), a.size(), sizeof(int), [](const void* a, const void* b) {
+	//	return *(int*)a - *(int*)b;
+	//	});
+	//함수 = 정렬방법;
+	qsort(a.data(), a.size(), sizeof(int), 정렬방법);
+
+	for (int num : a)
+		std::print("{:8}", num);
+
+	save("STL.cpp");
+}
+
+int 정렬방법(const void* a, const void* b)
+{
+	return *(int*)a - *(int*)b;
+}
+
+================================================
+STL.cpp:, 2024-03-28 목요일 오후 3:08:21
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      3월 28일 목요일			(4주 2일)
+// 
+// callable type -> 정렬 예제에서 시작
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <random>
+#include <print>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 확보하라.
+// int 100개의 값을 [1, 10000] 사이의 랜덤값으로 설정하라.
+// int 값 100개를 C의 qsort를 사용하여 오름차순으로 정렬하라.
+// 정렬결과를 한 줄에 10개씩 화면에 출력하라.
+
+std::array<int, 100> a;
+std::uniform_int_distribution uid{ 1, 10'000 };		//std::normal_distribution
+std::default_random_engine dre;
+
+int 정렬방법(const void* a, const void* b);
+
+//--------
+int main()
+//--------
+{
+	for (int& num : a)
+		num = uid(dre);
+
+	// 여기서 qsort로 오름차순 정렬한다. - qsort는 C 함수이지만, generic 함수이다.
+	//qsort(어디를, 몇 개를, 한 개의 크기는?, 너만의 정렬방법을 알려줘)
+
+	//qsort(a.data(), a.size(), sizeof(int), [](const void* a, const void* b) {
+	//	return *(int*)a - *(int*)b;
+	//	});
+	std::cout<<typeid(정렬방법).name()<<std::endl;
+	qsort(a.data(), a.size(), sizeof(int), 정렬방법);
+
+	for (int num : a)
+		std::print("{:8}", num);
+
+	save("STL.cpp");
+}
+
+int 정렬방법(const void* a, const void* b)
+{
+	return *(int*)a - *(int*)b;
+}
