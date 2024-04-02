@@ -4846,3 +4846,1252 @@ int 정렬방법(const void* a, const void* b)
 {
 	return *(int*)a - *(int*)b;
 }
+
+
+================================================
+STL.cpp:, 2024-04-02 화요일 오후 1:54:16
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 2일 화요일			(5주 1일)
+// 
+// 4월 25일 (8주 1일) - 중간시험
+//
+//  callable type -> 정렬 예제에서 시작
+//
+// 많은 데이터를 정렬할 때 - 정렬기준을 어떻게 sort 함수에 전달하지?
+// 1. 함수 포인터
+// 2. 람다
+// 3. 
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <random>
+#include <print>
+#include <algorithm>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 확보하라.
+// int 100개의 값을 [1, 10000] 랜덤값으로 설정하라.
+// int 값 100개를 std::sort를 사용하여 오름차순으로 정렬하라.
+// 정렬결과를 한 줄에 10개씩 화면에 출력하라.
+
+std::array<int, 100> a;
+std::uniform_int_distribution uid{ 1, 10'000 };		//std::normal_distribution
+std::default_random_engine dre;
+
+int 정렬방법(const void* a, const void* b);
+
+//--------
+int main()
+//--------
+{
+	for (int& num : a)
+		num = uid(dre);
+
+	// std::sort를 사용하여 a를 오름차순으로 정렬하라.
+	sort(a.begin(), a.end());	// 세 번째 정렬 방법 안써도 됨, default정렬
+
+
+	for (int num : a)
+		std::print("{:8}", num);
+
+	save("STL.cpp");
+}
+
+int 정렬방법(const void* a, const void* b)
+{
+	return *(int*)a - *(int*)b;
+}
+
+================================================
+STL.cpp:, 2024-04-02 화요일 오후 1:56:33
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 2일 화요일			(5주 1일)
+// 
+// 4월 25일 (8주 1일) - 중간시험
+//
+//  callable type -> 정렬 예제에서 시작
+//
+// 많은 데이터를 정렬할 때 - 정렬기준을 어떻게 sort 함수에 전달하지?
+// 1. 함수 포인터
+// 2. 람다
+// 3. 
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <random>
+#include <print>
+#include <algorithm>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 확보하라.
+// int 100개의 값을 [1, 10000] 랜덤값으로 설정하라.
+// int 값 100개를 std::sort를 사용하여 오름차순으로 정렬하라.
+// 정렬결과를 한 줄에 10개씩 화면에 출력하라.
+
+std::array<int, 100> a;
+std::uniform_int_distribution uid{ 1, 10'000 };		//std::normal_distribution
+std::default_random_engine dre;
+
+bool 정렬방법(int, int);
+
+//--------
+int main()
+//--------
+{
+	for (int& num : a)
+		num = uid(dre);
+
+	// std::sort를 사용하여 a를 내림차순으로 정렬하라.
+	sort(a.begin(), a.end(), 정렬방법);
+
+
+	for (int num : a)
+		std::print("{:8}", num);
+
+	save("STL.cpp");
+}
+
+bool 정렬방법(int a, int b)
+{
+	//return a < b;	// 디폴트는 오름차순
+	return a > b;	// descnding order. 내림차순 정렬
+}
+
+================================================
+STL.cpp:, 2024-04-02 화요일 오후 1:57:30
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 2일 화요일			(5주 1일)
+// 
+// 4월 25일 (8주 1일) - 중간시험
+//
+//  callable type -> 정렬 예제에서 시작
+//
+// 많은 데이터를 정렬할 때 - 정렬기준을 어떻게 sort 함수에 전달하지?
+// 1. 함수 포인터
+// 2. 람다
+// 3. 
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <random>
+#include <print>
+#include <algorithm>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 확보하라.
+// int 100개의 값을 [1, 10000] 랜덤값으로 설정하라.
+// int 값 100개를 std::sort를 사용하여 오름차순으로 정렬하라.
+// 정렬결과를 한 줄에 10개씩 화면에 출력하라.
+
+std::array<int, 123456> a;
+std::uniform_int_distribution uid{ 1, 10'000 };		//std::normal_distribution
+std::default_random_engine dre;
+
+bool 정렬방법(int, int);
+
+//--------
+int main()
+//--------
+{
+	for (int& num : a)
+		num = uid(dre);
+
+	// std::sort를 사용하여 a를 내림차순으로 정렬하라.
+	sort(a.begin(), a.end(), 정렬방법);
+
+
+	for (int num : a)
+		std::print("{:8}", num);
+
+	save("STL.cpp");
+}
+
+bool 정렬방법(int a, int b)
+{
+	//return a < b;	// 디폴트는 오름차순
+	return a > b;	// descnding order. 내림차순 정렬
+}
+
+================================================
+STL.cpp:, 2024-04-02 화요일 오후 2:07:41
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 2일 화요일			(5주 1일)
+// 
+// 4월 25일 (8주 1일) - 중간시험
+//
+//  callable type -> 정렬 예제에서 시작
+//
+// 많은 데이터를 정렬할 때 - 정렬기준을 어떻게 sort 함수에 전달하지?
+// 1. 함수 포인터
+// 2. 람다
+// 3. 
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <random>
+#include <print>
+#include <algorithm>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 확보하라.
+// int 100개의 값을 [1, 10000] 랜덤값으로 설정하라.
+// int 값 100개를 std::sort를 사용하여 오름차순으로 정렬하라.
+// 정렬결과를 한 줄에 10개씩 화면에 출력하라.
+
+std::array<int, 100> a;
+std::uniform_int_distribution uid{ 1, 10'000 };		//std::normal_distribution
+std::default_random_engine dre;
+
+class Dog {
+public:
+	bool operator()(int a, int b) {
+		return a < b;
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	for (int& num : a)
+		num = uid(dre);
+
+	// std::sort를 사용하여 a를 내림차순으로 정렬하라.
+	Dog dog;
+	sort(a.begin(), a.end(), dog);
+
+	for (int num : a)
+		std::print("{:8}", num);
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-02 화요일 오후 2:07:58
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 2일 화요일			(5주 1일)
+// 
+// 4월 25일 (8주 1일) - 중간시험
+//
+//  callable type -> 정렬 예제에서 시작
+//
+// 많은 데이터를 정렬할 때 - 정렬기준을 어떻게 sort 함수에 전달하지?
+// 1. 함수 포인터
+// 2. 람다
+// 3. 
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <random>
+#include <print>
+#include <algorithm>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 확보하라.
+// int 100개의 값을 [1, 10000] 랜덤값으로 설정하라.
+// int 값 100개를 std::sort를 사용하여 오름차순으로 정렬하라.
+// 정렬결과를 한 줄에 10개씩 화면에 출력하라.
+
+std::array<int, 100> a;
+std::uniform_int_distribution uid{ 1, 10'000 };		//std::normal_distribution
+std::default_random_engine dre;
+
+class Dog {
+public:
+	bool operator()(int a, int b) {
+		return a > b;
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	for (int& num : a)
+		num = uid(dre);
+
+	// std::sort를 사용하여 a를 내림차순으로 정렬하라.
+	Dog dog;
+	sort(a.begin(), a.end(), dog);
+
+	for (int num : a)
+		std::print("{:8}", num);
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-02 화요일 오후 2:08:18
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 2일 화요일			(5주 1일)
+// 
+// 4월 25일 (8주 1일) - 중간시험
+//
+//  callable type -> 정렬 예제에서 시작
+//
+// 많은 데이터를 정렬할 때 - 정렬기준을 어떻게 sort 함수에 전달하지?
+// 1. 함수 포인터
+// 2. 람다
+// 3. 
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <random>
+#include <print>
+#include <algorithm>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 확보하라.
+// int 100개의 값을 [1, 10000] 랜덤값으로 설정하라.
+// int 값 100개를 std::sort를 사용하여 오름차순으로 정렬하라.
+// 정렬결과를 한 줄에 10개씩 화면에 출력하라.
+
+std::array<int, 100> a;
+std::uniform_int_distribution uid{ 1, 10'000 };		//std::normal_distribution
+std::default_random_engine dre;
+
+class Dog {
+public:
+	bool operator()(int a, int b) {
+		return a > b;
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	for (int& num : a)
+		num = uid(dre);
+
+	// std::sort를 사용하여 a를 내림차순으로 정렬하라.
+	sort(a.begin(), a.end(), Dog{});
+
+	for (int num : a)
+		std::print("{:8}", num);
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-02 화요일 오후 2:15:54
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 2일 화요일			(5주 1일)
+// 
+// 4월 25일 (8주 1일) - 중간시험
+//
+//  callable type -> 정렬 예제에서 시작
+//
+// 많은 데이터를 정렬할 때 - 정렬기준을 어떻게 sort 함수에 전달하지?
+// 1. 함수 포인터
+// 2. 람다
+// 3. 함수 객체 (function object) - ()연산자(함수호출 연산자)를 오버로딩한 클래스 객체
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <random>
+#include <print>
+#include <algorithm>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 확보하라.
+// int 100개의 값을 [1, 10000] 랜덤값으로 설정하라.
+// int 값 100개를 std::sort를 사용하여 오름차순으로 정렬하라.
+// 정렬결과를 한 줄에 10개씩 화면에 출력하라.
+
+std::array<int, 100> a;
+std::uniform_int_distribution uid{ 1, 10'000 };		//std::normal_distribution
+std::default_random_engine dre;
+
+class Dog {
+	int cnt{};
+public:
+	bool operator()(int a, int b) {
+		++cnt;
+		return a > b;
+	}
+	void ShowResult() const {
+		std::cout << cnt << "번 비교함수 호출됨" << std::endl;
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	for (int& num : a)
+		num = uid(dre);
+
+	// std::sort를 사용하여 a를 내림차순으로 정렬하라.
+	Dog dog;
+	sort(a.begin(), a.end(), dog);
+
+	for (int num : a)
+		std::print("{:8}", num);
+
+	dog.ShowResult();
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-02 화요일 오후 2:17:05
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 2일 화요일			(5주 1일)
+// 
+// 4월 25일 (8주 1일) - 중간시험
+//
+//  callable type -> 정렬 예제에서 시작
+//
+// 많은 데이터를 정렬할 때 - 정렬기준을 어떻게 sort 함수에 전달하지?
+// 1. 함수 포인터
+// 2. 람다
+// 3. 함수 객체 (function object) - ()연산자(함수호출 연산자)를 오버로딩한 클래스 객체
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <random>
+#include <print>
+#include <algorithm>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 확보하라.
+// int 100개의 값을 [1, 10000] 랜덤값으로 설정하라.
+// int 값 100개를 std::sort를 사용하여 오름차순으로 정렬하라.
+// 정렬결과를 한 줄에 10개씩 화면에 출력하라.
+
+std::array<int, 100> a;
+std::uniform_int_distribution uid{ 1, 10'000 };		//std::normal_distribution
+std::default_random_engine dre;
+
+class Dog {
+	int cnt{};
+public:
+	bool operator()(int a, int b) {
+		++cnt;
+		return a > b;
+	}
+	void ShowResult() const {
+		std::cout << cnt << "번 비교함수 호출됨" << std::endl;
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	for (int& num : a)
+		num = uid(dre);
+
+	// std::sort를 사용하여 a를 내림차순으로 정렬하라.
+	Dog dog;
+	sort(a.begin(), a.end(), dog);
+
+	for (int num : a)
+		std::print("{:8}", num);
+
+	dog.ShowResult();
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-02 화요일 오후 2:17:36
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 2일 화요일			(5주 1일)
+// 
+// 4월 25일 (8주 1일) - 중간시험
+//
+//  callable type -> 정렬 예제에서 시작
+//
+// 많은 데이터를 정렬할 때 - 정렬기준을 어떻게 sort 함수에 전달하지?
+// 1. 함수 포인터
+// 2. 람다
+// 3. 함수 객체 (function object) - ()연산자(함수호출 연산자)를 오버로딩한 클래스 객체
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <random>
+#include <print>
+#include <algorithm>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 확보하라.
+// int 100개의 값을 [1, 10000] 랜덤값으로 설정하라.
+// int 값 100개를 std::sort를 사용하여 오름차순으로 정렬하라.
+// 정렬결과를 한 줄에 10개씩 화면에 출력하라.
+
+std::array<int, 100> a;
+std::uniform_int_distribution uid{ 1, 10'000 };		//std::normal_distribution
+std::default_random_engine dre;
+
+class Dog {
+	int cnt{};
+public:
+	bool operator()(int a, int b) {
+		++cnt;
+		return a > b;
+	}
+	void ShowResult() const {
+		std::cout << "결과: " << cnt << "번 비교함수 호출됨" << std::endl;
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	for (int& num : a)
+		num = uid(dre);
+
+	// std::sort를 사용하여 a를 내림차순으로 정렬하라.
+	Dog dog;
+	sort(a.begin(), a.end(), dog);
+
+	for (int num : a)
+		std::print("{:8}", num);
+
+	dog.ShowResult();
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-02 화요일 오후 2:19:28
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 2일 화요일			(5주 1일)
+// 
+// 4월 25일 (8주 1일) - 중간시험
+//
+//  callable type -> 정렬 예제에서 시작
+//
+// 많은 데이터를 정렬할 때 - 정렬기준을 어떻게 sort 함수에 전달하지?
+// 1. 함수 포인터
+// 2. 람다
+// 3. 함수 객체 (function object) - ()연산자(함수호출 연산자)를 오버로딩한 클래스 객체
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <random>
+#include <print>
+#include <algorithm>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 확보하라.
+// int 100개의 값을 [1, 10000] 랜덤값으로 설정하라.
+// int 값 100개를 std::sort를 사용하여 오름차순으로 정렬하라.
+// 정렬결과를 한 줄에 10개씩 화면에 출력하라.
+
+std::array<int, 100> a;
+std::uniform_int_distribution uid{ 1, 10'000 };		//std::normal_distribution
+std::default_random_engine dre;
+
+class Dog {
+	int cnt{};
+public:
+	bool operator()(int a, int b) {
+		std::cout << "결과: " << cnt << "번 비교함수 호출됨" << std::endl;
+		++cnt;
+		return a > b;
+	}
+	void ShowResult() const {
+		std::cout << "결과: " << cnt << "번 비교함수 호출됨" << std::endl;
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	for (int& num : a)
+		num = uid(dre);
+
+	// std::sort를 사용하여 a를 내림차순으로 정렬하라.
+	Dog dog;
+	sort(a.begin(), a.end(), dog);
+
+	for (int num : a)
+		std::print("{:8}", num);
+
+	dog.ShowResult();
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-02 화요일 오후 2:19:49
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 2일 화요일			(5주 1일)
+// 
+// 4월 25일 (8주 1일) - 중간시험
+//
+//  callable type -> 정렬 예제에서 시작
+//
+// 많은 데이터를 정렬할 때 - 정렬기준을 어떻게 sort 함수에 전달하지?
+// 1. 함수 포인터
+// 2. 람다
+// 3. 함수 객체 (function object) - ()연산자(함수호출 연산자)를 오버로딩한 클래스 객체
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <random>
+#include <print>
+#include <algorithm>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 확보하라.
+// int 100개의 값을 [1, 10000] 랜덤값으로 설정하라.
+// int 값 100개를 std::sort를 사용하여 오름차순으로 정렬하라.
+// 정렬결과를 한 줄에 10개씩 화면에 출력하라.
+
+std::array<int, 1000> a;
+std::uniform_int_distribution uid{ 1, 10'000 };		//std::normal_distribution
+std::default_random_engine dre;
+
+class Dog {
+	int cnt{};
+public:
+	bool operator()(int a, int b) {
+		std::cout << "결과: " << cnt << "번 비교함수 호출됨" << std::endl;
+		++cnt;
+		return a > b;
+	}
+	void ShowResult() const {
+		std::cout << "결과: " << cnt << "번 비교함수 호출됨" << std::endl;
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	for (int& num : a)
+		num = uid(dre);
+
+	// std::sort를 사용하여 a를 내림차순으로 정렬하라.
+	Dog dog;
+	sort(a.begin(), a.end(), dog);
+
+	for (int num : a)
+		std::print("{:8}", num);
+
+	dog.ShowResult();
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-02 화요일 오후 2:20:32
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 2일 화요일			(5주 1일)
+// 
+// 4월 25일 (8주 1일) - 중간시험
+//
+//  callable type -> 정렬 예제에서 시작
+//
+// 많은 데이터를 정렬할 때 - 정렬기준을 어떻게 sort 함수에 전달하지?
+// 1. 함수 포인터
+// 2. 람다
+// 3. 함수 객체 (function object) - ()연산자(함수호출 연산자)를 오버로딩한 클래스 객체
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <random>
+#include <print>
+#include <algorithm>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+// [문제] int 100개를 저장할 공간을 확보하라.
+// int 100개의 값을 [1, 10000] 랜덤값으로 설정하라.
+// int 값 100개를 std::sort를 사용하여 오름차순으로 정렬하라.
+// 정렬결과를 한 줄에 10개씩 화면에 출력하라.
+
+std::array<int, 1000> a;
+std::uniform_int_distribution uid{ 1, 10'000 };		//std::normal_distribution
+std::default_random_engine dre;
+
+int cnt{};
+
+class Dog {
+public:
+	bool operator()(int a, int b) {
+		++cnt;
+		return a > b;
+	}
+	void ShowResult() const {
+		std::cout << "결과: " << cnt << "번 비교함수 호출됨" << std::endl;
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	for (int& num : a)
+		num = uid(dre);
+
+	// std::sort를 사용하여 a를 내림차순으로 정렬하라.
+	Dog dog;
+	sort(a.begin(), a.end(), dog);
+
+	for (int num : a)
+		std::print("{:8}", num);
+
+	dog.ShowResult();
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-02 화요일 오후 2:27:32
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 2일 화요일			(5주 1일)
+// 
+// 4월 25일 (8주 1일) - 중간시험
+//
+//  callable type -> 정렬 예제에서 시작
+//
+// 많은 데이터를 정렬할 때 - 정렬기준을 어떻게 sort 함수에 전달하지?
+// 1. 함수 포인터
+// 2. 람다
+// 3. 함수 객체 (function object) - ()연산자(함수호출 연산자)를 오버로딩한 클래스 객체
+//	  상태를 가질 수 있다.
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+//--------
+int main()
+//--------
+{
+	[]() {};
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-02 화요일 오후 2:28:26
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 2일 화요일			(5주 1일)
+// 
+// 4월 25일 (8주 1일) - 중간시험
+//
+//  callable type -> 정렬 예제에서 시작
+//
+// 많은 데이터를 정렬할 때 - 정렬기준을 어떻게 sort 함수에 전달하지?
+// 1. 함수 포인터
+// 2. 람다
+// 3. 함수 객체 (function object) - ()연산자(함수호출 연산자)를 오버로딩한 클래스 객체
+//	  상태를 가질 수 있다.
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+//--------
+int main()
+//--------
+{
+	[]() {
+		std::cout << "hello, 람다" << std::endl;
+		};
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-02 화요일 오후 2:29:50
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 2일 화요일			(5주 1일)
+// 
+// 4월 25일 (8주 1일) - 중간시험
+//
+//  callable type -> 정렬 예제에서 시작
+//
+// 많은 데이터를 정렬할 때 - 정렬기준을 어떻게 sort 함수에 전달하지?
+// 1. 함수 포인터
+// 2. 람다
+// 3. 함수 객체 (function object) - ()연산자(함수호출 연산자)를 오버로딩한 클래스 객체
+//	  상태를 가질 수 있다.
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+//--------
+int main()
+//--------
+{
+	[]() {
+		std::cout << "hello, 람다" << std::endl;
+		}();
+	
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-02 화요일 오후 2:30:37
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 2일 화요일			(5주 1일)
+// 
+// 4월 25일 (8주 1일) - 중간시험
+//
+//  callable type -> 정렬 예제에서 시작
+//
+// 많은 데이터를 정렬할 때 - 정렬기준을 어떻게 sort 함수에 전달하지?
+// 1. 함수 포인터
+// 2. 람다
+// 3. 함수 객체 (function object) - ()연산자(함수호출 연산자)를 오버로딩한 클래스 객체
+//	  상태를 가질 수 있다.
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+//--------
+int main()
+//--------
+{
+	[](int a, int b) {
+		std::cout << a + b << std::endl;
+		}(3, 4);
+	
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-02 화요일 오후 2:33:04
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 2일 화요일			(5주 1일)
+// 
+// 4월 25일 (8주 1일) - 중간시험
+//
+//  callable type -> 정렬 예제에서 시작
+//
+// 많은 데이터를 정렬할 때 - 정렬기준을 어떻게 sort 함수에 전달하지?
+// 1. 함수 포인터
+// 2. 람다
+// 3. 함수 객체 (function object) - ()연산자(함수호출 연산자)를 오버로딩한 클래스 객체
+//	  상태를 가질 수 있다.
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+//--------
+int main()
+//--------
+{
+	auto 람다 = []() {
+		std::cout << "람다" << std::endl;
+		};
+	
+	std::cout << "람다의 정체는 " << typeid(람다).name() << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-02 화요일 오후 2:34:36
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 2일 화요일			(5주 1일)
+// 
+// 4월 25일 (8주 1일) - 중간시험
+//
+//  callable type -> 정렬 예제에서 시작
+//
+// 많은 데이터를 정렬할 때 - 정렬기준을 어떻게 sort 함수에 전달하지?
+// 1. 함수 포인터
+// 2. 람다
+// 3. 함수 객체 (function object) - ()연산자(함수호출 연산자)를 오버로딩한 클래스 객체
+//	  상태를 가질 수 있다.
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+class Dog {
+
+};
+
+//--------
+int main()
+//--------
+{
+	auto 람다 = []() {
+		std::cout << "람다" << std::endl;
+		};
+	
+	std::cout << "람다의 정체는 " << typeid(람다).name() << std::endl;
+
+	Dog dog;
+
+	std::cout << typeid(dog).name() << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-02 화요일 오후 2:41:15
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 2일 화요일			(5주 1일)
+// 
+// 4월 25일 (8주 1일) - 중간시험
+//
+//  callable type -> 정렬 예제에서 시작
+//
+// 많은 데이터를 정렬할 때 - 정렬기준을 어떻게 sort 함수에 전달하지?
+// 1. 함수 포인터
+// 2. 람다
+// 3. 함수 객체 (function object) - ()연산자(함수호출 연산자)를 오버로딩한 클래스 객체
+//	  상태를 가질 수 있다.
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+class Dog {
+public:
+	void operator()() {
+		std::cout << "람다" << std::endl;
+		};
+};
+
+auto 람다2 = []() {
+	std::cout << "람다" << std::endl;
+	};
+
+//--------
+int main()
+//--------
+{
+	auto 람다1 = []() {
+		std::cout << "람다" << std::endl;
+		};
+
+	std::cout << typeid(람다1).name() << std::endl;
+	std::cout << typeid(람다2).name() << std::endl;
+	
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-02 화요일 오후 2:41:30
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 2일 화요일			(5주 1일)
+// 
+// 4월 25일 (8주 1일) - 중간시험
+//
+//  callable type -> 정렬 예제에서 시작
+//
+// 많은 데이터를 정렬할 때 - 정렬기준을 어떻게 sort 함수에 전달하지?
+// 1. 함수 포인터
+// 2. 람다
+// 3. 함수 객체 (function object) - ()연산자(함수호출 연산자)를 오버로딩한 클래스 객체
+//	  상태를 가질 수 있다.
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+class Dog {
+public:
+	void operator()() {
+		std::cout << "람다" << std::endl;
+		};
+};
+
+//--------
+int main()
+//--------
+{
+	auto 람다1 = []() {
+		std::cout << "람다" << std::endl;
+		};
+
+	auto 람다2 = []() {
+		std::cout << "람다" << std::endl;
+		};
+
+	std::cout << typeid(람다1).name() << std::endl;
+	std::cout << typeid(람다2).name() << std::endl;
+	
+	save("STL.cpp");
+}
+
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 2일 화요일			(5주 1일)
+// 
+// 4월 25일 (8주 1일) - 중간시험
+//
+//  callable type -> 정렬 예제에서 시작
+//
+// 많은 데이터를 정렬할 때 - 정렬기준을 어떻게 sort 함수에 전달하지?
+// 1. 함수 포인터
+// 2. 람다
+// 3. 함수 객체 (function object) - ()연산자(함수호출 연산자)를 오버로딩한 클래스 객체
+//	  상태를 가질 수 있다.
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+void jump()
+{
+	std::cout << "점프" << std::endl;
+}
+
+void slide()
+{
+	std::cout << "slide" << std::endl;
+
+}
+
+//--------
+int main()
+//--------
+{
+	void (*f)() = jump;
+	while (true) {
+		// s를 누르면 기능을 토글
+		std::cout << "키를 누르면 기능을 수행 = ";
+		char c;
+		std::cin >> c;
+
+		if ('a' == c) {
+			f();
+		}
+
+		if ('s' == c) {
+			if (f == jump) {
+				f = slide;
+			else
+				f = jump;
+			}
+		}
+	}
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-02 화요일 오후 2:53:09
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 2일 화요일			(5주 1일)
+// 
+// 4월 25일 (8주 1일) - 중간시험
+//
+//  callable type -> 정렬 예제에서 시작
+//
+// 많은 데이터를 정렬할 때 - 정렬기준을 어떻게 sort 함수에 전달하지?
+// 1. 함수 포인터
+// 2. 람다
+// 3. 함수 객체 (function object) - ()연산자(함수호출 연산자)를 오버로딩한 클래스 객체
+//	  상태를 가질 수 있다.
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+void f(int (*x)(int, int))
+{
+	std::cout << x(3, 5) << std::endl;
+}
+
+int x(int a, int b)
+{
+	return a * b;
+}
+
+//--------
+int main()
+//--------
+{
+	f(x);
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-02 화요일 오후 2:53:55
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 2일 화요일			(5주 1일)
+// 
+// 4월 25일 (8주 1일) - 중간시험
+//
+//  callable type -> 정렬 예제에서 시작
+//
+// 많은 데이터를 정렬할 때 - 정렬기준을 어떻게 sort 함수에 전달하지?
+// 1. 함수 포인터
+// 2. 람다
+// 3. 함수 객체 (function object) - ()연산자(함수호출 연산자)를 오버로딩한 클래스 객체
+//	  상태를 가질 수 있다.
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+void f(int (*x)(int, int))
+{
+	std::cout << x(3, 5) << std::endl;
+}
+
+int x(int a, int b)
+{
+	return a * b;
+}
+
+//--------
+int main()
+//--------
+{
+	f([](int, int)->int {return 333; });
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-02 화요일 오후 2:59:14
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 2일 화요일			(5주 1일)
+// 
+// 4월 25일 (8주 1일) - 중간시험
+//
+//  callable type -> 정렬 예제에서 시작
+//
+// 많은 데이터를 정렬할 때 - 정렬기준을 어떻게 sort 함수에 전달하지?
+// 1. 함수 포인터
+// 2. 람다
+// 3. 함수 객체 (function object) - ()연산자(함수호출 연산자)를 오버로딩한 클래스 객체
+//	  상태를 가질 수 있다.
+// 
+// --> 모든 호출가능타입을 대표하는 클래스 -
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <functional>
+#include "save.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+void f( std::function<int(int, int)> x)
+{
+	std::cout << x(3, 5) << std::endl;
+}
+
+int x(int a, int b)
+{
+	return a * b;
+}
+
+//--------
+int main()
+//--------
+{
+	f([](int, int)->int {return 333; });
+	f(x);
+
+
+	save("STL.cpp");
+}
