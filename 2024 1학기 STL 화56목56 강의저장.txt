@@ -10267,3 +10267,1231 @@ int main()
 
 	save("STL.cpp");
 }
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 1:40:55
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 1:42:13
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::list<String> cont;
+
+	관찰 = true;
+	cont.push_back("333");
+
+	관찰 = false;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 1:47:33
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::list<String> cont;
+
+	관찰 = true;
+	//cont.push_back("333");
+	cont.emplace_back("333");
+
+	관찰 = false;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 1:48:06
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::list<String> cont;
+
+	관찰 = true;
+	//cont.push_back("333");
+	cont.emplace_back("333");
+	cont.emplace_back(String{ "333" });
+
+	관찰 = false;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 1:48:34
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::list<String> cont;
+
+	관찰 = true;
+	//cont.push_back("333");
+	cont.emplace_back("333");
+	//cont.emplace_back(String{ "333" });	// 이렇게 하면 push_back과 똑같이 작동하게 됨.
+
+	관찰 = false;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 1:52:24
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::list<String> cont;
+
+	관찰 = true;
+	//cont.push_back("333");
+	//cont.emplace_back(String{ "333" });	// 이렇게 하면 push_back과 똑같이 작동하게 됨.
+	cont.emplace_back("333");
+	cont.emplace_front("1");
+	cont.emplace(++cont.begin(), "22");
+
+	관찰 = false;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 1:53:13
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::list<String> cont;
+
+	관찰 = true;
+	//cont.push_back("333");
+	//cont.emplace_back(String{ "333" });	// 이렇게 하면 push_back과 똑같이 작동하게 됨.
+	cont.emplace_back("333");
+	cont.emplace_front("1");
+	cont.emplace(++cont.begin(), "22");
+
+	관찰 = false;
+
+	std::cout << std::endl;
+	for (const String& s : cont)
+		std::cout << s << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 1:55:21
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include <vector>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::vector<String> cont;
+
+	관찰 = true;
+	cont.emplace_back("333");
+	//cont.emplace_front("1");
+	cont.emplace(++cont.begin(), "22");
+
+	관찰 = false;
+
+	std::cout << std::endl;
+	for (const String& s : cont)
+		std::cout << s << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 1:56:15
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include <vector>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::vector<String> cont;
+	cont.reserve(3);
+
+	관찰 = true;
+	cont.emplace_back("333");
+	//cont.emplace_front("1");
+	cont.emplace(++cont.begin(), "22");
+
+	관찰 = false;
+
+	std::cout << std::endl;
+	for (const String& s : cont)
+		std::cout << s << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 1:56:55
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include <vector>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::vector<String> cont;
+	cont.reserve(3);
+
+	관찰 = true;
+	cont.emplace_back("333");
+	//cont.emplace_front("1");
+	cont.emplace(cont.begin(), "22");
+
+	관찰 = false;
+
+	std::cout << std::endl;
+	for (const String& s : cont)
+		std::cout << s << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 1:57:42
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include <vector>
+#include <deque>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::deque<String> cont;
+
+	관찰 = true;
+	cont.emplace_back("333");
+	cont.emplace_front("1");
+	cont.emplace(++cont.begin(), "22");
+
+	관찰 = false;
+
+	std::cout << std::endl;
+	for (const String& s : cont)
+		std::cout << s << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 2:06:04
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include <vector>
+#include <deque>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::list<String> cont;
+
+	관찰 = true;
+	
+	// [문제 ]  파일 "String.cpp"를 읽어 cont에 저장하라.
+
+	std::ifstream in{ "String.cpp" };
+	if (not in)
+		return 0;
+
+	String s;
+	while (in >> s)
+		cont.emplace_back(s);
+
+	관찰 = false;
+
+	std::cout << std::endl;
+	for (const String& s : cont)
+		std::cout << s << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 2:07:34
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include <vector>
+#include <deque>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::vector<String> cont;
+
+	관찰 = true;
+	
+	// [문제 ]  파일 "String.cpp"를 읽어 cont에 저장하라.
+
+	std::ifstream in{ "String.cpp" };
+	if (not in)
+		return 0;
+
+	String s;
+	while (in >> s)
+		cont.emplace_back(s);
+
+	관찰 = false;
+
+	std::cout << std::endl;
+	for (const String& s : cont)
+		std::cout << s << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 2:08:15
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include <vector>
+#include <deque>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::vector<String> cont;
+	cont.reserve(1000);
+
+	관찰 = true;
+	
+	// [문제 ]  파일 "String.cpp"를 읽어 cont에 저장하라.
+
+	std::ifstream in{ "String.cpp" };
+	if (not in)
+		return 0;
+
+	String s;
+	while (in >> s)
+		cont.emplace_back(s);
+
+	관찰 = false;
+
+	std::cout << std::endl;
+	for (const String& s : cont)
+		std::cout << s << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 2:09:07
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include <vector>
+#include <deque>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::deque<String> cont;
+
+	관찰 = true;
+	
+	// [문제 ]  파일 "String.cpp"를 읽어 cont에 저장하라.
+
+	std::ifstream in{ "String.cpp" };
+	if (not in)
+		return 0;
+
+	String s;
+	while (in >> s)
+		cont.emplace_back(s);
+
+	관찰 = false;
+
+	std::cout << std::endl;
+	for (const String& s : cont)
+		std::cout << s << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 2:11:06
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include <vector>
+#include <deque>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::list<String> cont;
+
+	관찰 = true;
+	
+	// [문제 ]  파일 "String.cpp"를 읽어 cont에 저장하라.
+
+	std::ifstream in{ "String.cpp" };
+	if (not in)
+		return 0;
+
+	String s;
+	while (in >> s)
+		cont.emplace_back(s.getData());		// 복사 생성 하지 않음
+
+	관찰 = false;
+
+	std::cout << std::endl;
+	for (const String& s : cont)
+		std::cout << s << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 2:12:48
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include <vector>
+#include <deque>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::list<String> cont;
+
+	관찰 = true;
+	
+	// [문제 ]  파일 "String.cpp"를 읽어 cont에 저장하라.
+
+	std::ifstream in{ "String.cpp" };
+	if (not in)
+		return 0;
+
+	cont = { std::istream_iterator<String>{in}, {} };
+
+	//String s;
+	//while (in >> s)
+	//	cont.emplace_back(s.getData());		// 복사 생성 하지 않음
+
+	관찰 = false;
+
+	std::cout << std::endl;
+	for (const String& s : cont)
+		std::cout << s << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 2:26:46
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include <vector>
+#include <deque>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::list<String> cont;
+
+	std::ifstream in{ "String.cpp" };
+	if (not in)
+		return 0;
+
+	cont = { std::istream_iterator<String>{in}, {} };
+
+	관찰 = true;
+	
+	// cont를 길이오름차순으로 정렬하라.
+	cont.sort( [](const String& a, const String& b) {
+		return a.getLen() < b.getLen();
+		});
+
+	관찰 = false;
+
+	std::cout << std::endl;
+	for (const String& s : cont)
+		std::cout << s << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 2:30:05
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include <vector>
+#include <deque>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::vector<String> cont;
+
+	std::ifstream in{ "String.cpp" };
+	if (not in)
+		return 0;
+
+	cont = { std::istream_iterator<String>{in}, {} };
+
+	관찰 = true;
+	
+	// cont를 길이오름차순으로 정렬하라.
+	std::sort(cont.begin(), cont.end(), [](const String& a, const String& b) {
+		return a.getLen() < b.getLen();
+		});
+
+	관찰 = false;
+
+	std::cout << std::endl;
+	for (const String& s : cont)
+		std::cout << s << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 2:31:28
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include <vector>
+#include <deque>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::list<String> cont;
+
+	std::ifstream in{ "String.cpp" };
+	if (not in)
+		return 0;
+
+	cont = { std::istream_iterator<String>{in}, {} };
+
+	관찰 = true;
+	
+	// cont를 길이오름차순으로 정렬하라.
+	cont.sort([](const String& a, const String& b) {
+		return a.getLen() < b.getLen();
+		});
+
+	관찰 = false;
+
+	cont.reverse();
+
+	std::cout << std::endl;
+	for (const String& s : cont)
+		std::cout << s << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 2:34:03
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include <vector>
+#include <deque>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::list<String> cont;
+
+	std::ifstream in{ "String.cpp" };
+	if (not in)
+		return 0;
+
+	cont = { std::istream_iterator<String>{in}, {} };
+
+	관찰 = true;
+	
+	// cont를 길이오름차순으로 정렬하라.
+	cont.sort([](const String& a, const String& b) {
+		return a.getLen() < b.getLen();
+		});
+
+	관찰 = false;
+
+	cont.reverse();
+
+	// [문제] cont를 거꾸로 출력하라.
+	// 모든 컨테이너에 쓸 수 있는 순회 출력문
+	for (auto p = cont.begin(); p != cont.end(); ++p)
+		std::cout << *p << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 2:42:09
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+// 
+// (책 <모두의 C++> 참고)
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include <vector>
+#include <deque>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::list<String> cont;
+
+	std::ifstream in{ "String.cpp" };
+	if (not in)
+		return 0;
+
+	cont = { std::istream_iterator<String>{in}, {} };
+
+	관찰 = true;
+	
+	// cont를 길이오름차순으로 정렬하라.
+	cont.sort([](const String& a, const String& b) {
+		return a.getLen() < b.getLen();
+		});
+
+	관찰 = false;
+
+	cont.reverse();
+
+	// [문제] cont를 거꾸로 출력하라.
+	// 모든 컨테이너에 쓸 수 있는 순회 출력문
+	//for (auto p = cont.begin(); p != cont.end(); ++p)
+	//	std::cout << *p << std::endl;
+	// 역순으로 출력하려면(r: reverse),	반복자 설명 참고: https://en.cppreference.com/w/cpp/iterator/reverse_iterator
+	for (auto p = cont.rbegin(); p != cont.rend(); ++p)
+		std::cout << *p << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 2:50:36
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+// 
+// (책 <모두의 C++> 참고)
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include <vector>
+#include <deque>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::list<String> cont;
+
+	std::ifstream in{ "String.cpp" };
+	if (not in)
+		return 0;
+
+	cont = { std::istream_iterator<String>{in}, {} };
+
+	// cont를 길이오름차순으로 정렬하라.
+	cont.sort([](const String& a, const String& b) {
+		return a.getLen() < b.getLen();
+		});
+
+	// [문제] cont에서 길이가 5인 원소만 화면에 출력하라.
+	for (const String& s : cont)	// 나쁜 방법
+		if (s.getLen() == 5)
+			std::cout << s << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 2:53:42
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+// 
+// (책 <모두의 C++> 참고)
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include <vector>
+#include <deque>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::list<String> cont;
+
+	std::ifstream in{ "String.cpp" };
+	if (not in)
+		return 0;
+
+	cont = { std::istream_iterator<String>{in}, {} };
+
+	// cont를 길이오름차순으로 정렬하라.
+	cont.sort([](const String& a, const String& b) {
+		return a.getLen() < b.getLen();
+		});
+
+	// [문제] cont에서 길이가 5인 원소만 화면에 출력하라.
+	copy_if(cont.begin(), cont.end(), std::ostream_iterator<String>{std::cout, "\n"},	// 얘도 빵점 답
+		[](const String& s) {
+			return s.getLen() == 5;
+		});
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 2:54:26
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+// 
+// (책 <모두의 C++> 참고)
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include <vector>
+#include <deque>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::list<String> cont;
+
+	std::ifstream in{ "String.cpp" };
+	if (not in)
+		return 0;
+
+	cont = { std::istream_iterator<String>{in}, {} };
+
+	// cont를 길이오름차순으로 정렬하라.
+	cont.sort([](const String& a, const String& b) {
+		return a.getLen() < b.getLen();
+		});
+
+	// [문제] cont에서 길이가 5인 원소만 화면에 출력하라.
+	copy_if(cont.begin(), cont.end(), std::ostream_iterator<String>{std::cout, "\n"},	// 얘도 빵점 답, 전체 데이터를 하나씩 훑어가며 찾는 것
+		[](const String& s) {
+			return s.getLen() == 5;
+		});
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-04-23 화요일 오후 3:01:49
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
+// 
+// 4월 25일 (8주 2일) - 중간시험
+// 
+// list
+// 
+// (책 <모두의 C++> 참고)
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <list>
+#include <vector>
+#include <deque>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::list<String> cont;
+
+	std::ifstream in{ "String.cpp" };
+	if (not in)
+		return 0;
+
+	cont = { std::istream_iterator<String>{in}, {} };
+
+	// cont를 길이오름차순으로 정렬하라.
+	cont.sort([](const String& a, const String& b) {
+		return a.getLen() < b.getLen();
+		});
+
+	// [문제] cont에서 길이가 5인 원소만 화면에 출력하라.
+	copy_if(cont.begin(), cont.end(), std::ostream_iterator<String>{std::cout, "\n"},	// 얘도 빵점 답, 전체 데이터를 하나씩 훑어가며 찾는 것
+		[](const String& s) {
+			return s.getLen() == 5;
+		});
+
+	save("STL.cpp");
+}
+
+// 소스 코드 하나, 읽어야 할 자료 코드 하나씩 제공(zip 파일 다운로드)
+// 시험 시간 70분 / 구글링 가능 / 시험 도중 퇴실 가능 / 0점 방지 문제: 데이터 생성하라고 할 것임.
+// 주의 사항: 컨닝 주의

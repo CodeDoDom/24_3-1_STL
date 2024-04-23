@@ -1,52 +1,51 @@
 //------------------------------------------------------------------------
-// 2024.	1학기 STL 화56목56      4월 18일 목요일			(7주 2일)
+// 2024.	1학기 STL 화56목56      4월 23일 화요일			(8주 1일)
 // 
 // 4월 25일 (8주 2일) - 중간시험
 // 
-// STL container - Sequence - deque(덱)
-// 덱 -> 벡터와 리스트의 중간
+// list
 // 
-// push_back, push_front -> O(1) 알고리즘
+// (책 <모두의 C++> 참고)
 //------------------------------------------------------------------------
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
-#include <deque>
-#include <vector>
 #include <list>
+#include <vector>
+#include <deque>
+#include <fstream>
+#include <algorithm>
 #include "save.h"
 #include "String.h"
 //using namespace std;	// 사용하지 않고 코딩
 
 extern bool 관찰;
 
-class Test {
-	char x[4'096];
-};
-
 //--------
 int main()
 //--------
 {
-	//std::vector<Test> v;		// 3543306
+	std::list<String> cont;
 
-	//std::deque<Test> v;		// 58xxxxx
+	std::ifstream in{ "String.cpp" };
+	if (not in)
+		return 0;
 
-	std::list<Test> v;			// deque보다 조금 더 크게 나올 듯(아마)
+	cont = { std::istream_iterator<String>{in}, {} };
 
-	size_t cnt{};
+	// cont를 길이오름차순으로 정렬하라.
+	cont.sort([](const String& a, const String& b) {
+		return a.getLen() < b.getLen();
+		});
 
-	while (true){
-		try {
-			v.emplace_back();
-			++cnt;
-		}
-		catch (...) {
-			std::cout << "최대 개수 - " << v.size() << std::endl;
-			return 0;
-		}
-		if (cnt % 10'0000 == 0)
-			std::cout << cnt << std::endl;
-	}
-	
+	// [문제] cont에서 길이가 5인 원소만 화면에 출력하라.
+	copy_if(cont.begin(), cont.end(), std::ostream_iterator<String>{std::cout, "\n"},	// 얘도 빵점 답, 전체 데이터를 하나씩 훑어가며 찾는 것
+		[](const String& s) {
+			return s.getLen() == 5;
+		});
+
 	save("STL.cpp");
 }
+
+// 소스 코드 하나, 읽어야 할 자료 코드 하나씩 제공(zip 파일 다운로드)
+// 시험 시간 70분 / 구글링 가능 / 시험 도중 퇴실 가능 / 0점 방지 문제: 데이터 생성하라고 할 것임.
+// 주의 사항: 컨닝 주의
