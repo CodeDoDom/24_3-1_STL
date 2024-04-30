@@ -111,6 +111,13 @@ bool String::operator==(const String& rhs) const
 	return std::equal(p.get(), p.get() + len, rhs.p.get());
 };
 
+// 2024. 4. 30
+bool String::operator<(const String& rhs) const 
+{
+	return std::lexicographical_compare(p.get(), p.get() + len,
+		rhs.p.get(), rhs.p.get() + rhs.len);
+}
+
 
 // 2024. 4. 4 get/set
 size_t String::getLen() const
