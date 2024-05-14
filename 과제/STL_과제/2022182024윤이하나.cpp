@@ -33,21 +33,27 @@ int main()
 	std::ifstream in{ inFileName, std::ios::binary };
 	
 	// 읽을 수 있는지 확인하는 코드
-	/*
+	
 	if (not in) {
 		std::cout << "파일 \"" << inFileName << "\"을 열 수 없습니다" << std::endl;
 		return 0;
 	}
-	*/
+	
 
+
+	// 과제 1번
 	std::vector<Player> v;
 	v.reserve(200'0000);
 
-	Player pl;
-	while (pl.read(in))
-		v.push_back(pl);
+	Player player;
+	while (player.read(in))
+		v.push_back(player);
 
-	std::cout << "읽은 Player의 수 : " << v.size() << std::endl;
+	std::cout << "Player: " << v.size() << std::endl;
+
+	// 과제 2번
+	//auto pos = std::max_element(Player.begin(), Player.end());
+	//std::cout << "최댓값: " << *pos << '\n';
 
 	return 0;
 }

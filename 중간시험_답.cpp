@@ -141,16 +141,16 @@ int main( )
 	//																답: 1'999
 	//--------------------------------------------------------------------------
 
-	//vector<Bird> v;
-	//v.reserve(1'0000);	// 공간 마련
+	vector<Bird> v;
+	v.reserve(1'0000);	// 공간 마련
 
-	//cout << "[문제1] 답" << endl;
+	cout << "[문제1] 답" << endl;
 
-	//Bird b;
-	//while (b.read(in))
-	//	v.push_back(b);
+	Bird b;
+	while (b.read(in))
+		v.push_back(b);
 
-	//cout << "읽은 Bird의 수 : " << v.size() << endl;
+	cout << "읽은 Bird의 수 : " << v.size() << endl;
 
 	// ******************************************************
 	// * 파일을 읽지 못한 학생은 아래 주석을 풀자.          *
@@ -160,10 +160,10 @@ int main( )
 	
 	// [문제 1]을 해결하지 못한 경우 주석을 제거하자
 	
-	vector<Bird> v;
-	v.reserve( 1'000 );
-	for ( int i = 0; i < 1'000; ++i )
-		v.emplace_back( uid( dre ) );
+	//vector<Bird> v;
+	//v.reserve( 1'000 );
+	//for ( int i = 0; i < 1'000; ++i )
+	//	v.emplace_back( uid( dre ) );
 	
 
 
