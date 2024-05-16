@@ -14393,3 +14393,915 @@ int main()
 		std::cout << c;
 	std::cout << std::endl;
 }
+
+
+================================================
+STL.cpp:, 2024-05-16 목요일 오후 1:37:54
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 16일 목요일			(11주 2일)
+// 
+// Assoiative Container - set / map
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <set>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+
+//--------
+int main()
+//--------
+{
+	save("STL.cpp");
+
+	// [문제] 사용자가 입력한 모든 단어를 오름차순으로 정렬한 후
+	// 화면에 출력하라.
+	관찰 = true;
+	std::set<String> s{ std::istream_iterator<String>{std::cin}, {} };
+	관찰 = false;
+
+	for (const String& s : s)
+		std::cout << s << std::endl;
+}
+
+
+================================================
+STL.cpp:, 2024-05-16 목요일 오후 1:57:52
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 16일 목요일			(11주 2일)
+// 
+// Assoiative Container - set / map
+// 
+// - equivalence(동등성, <) / equality(상등성, ==)
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <set>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+
+//--------
+int main()
+//--------
+{
+	save("STL.cpp");
+	
+	std::ifstream in{ "STL.cpp" };
+
+	std::set<String, std::less<String>> s{ std::istream_iterator<String>{in}, {} };
+
+	for (const String& s : s)
+		std::cout << s << std::endl;
+}
+
+
+================================================
+STL.cpp:, 2024-05-16 목요일 오후 1:59:06
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 16일 목요일			(11주 2일)
+// 
+// Assoiative Container - set / map
+// 
+// - equivalence(동등성, <) / equality(상등성, ==)
+// - default 정렬기준은 operator<
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <set>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+
+//--------
+int main()
+//--------
+{
+	save("STL.cpp");
+	
+	std::ifstream in{ "STL.cpp" };
+
+	std::set<String> s{ std::istream_iterator<String>{in}, {} };
+
+	for (const String& s : s)
+		std::cout << s << std::endl;
+}
+
+
+================================================
+STL.cpp:, 2024-05-16 목요일 오후 2:07:44
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 16일 목요일			(11주 2일)
+// 
+// Assoiative Container - set / map
+// 
+// - equivalence(동등성, <) / equality(상등성, ==)
+// - default 정렬기준은 operator<
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <set>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+bool 길이오름차순(const String& a, const String& b)
+{
+	return a.getLen() < b.getLen();
+}
+
+//--------
+int main()
+//--------
+{
+	save("STL.cpp");
+	
+	std::ifstream in{ "STL.cpp" };
+
+	std::set<String, bool (*)(const String&, const String&)> s{ std::istream_iterator<String>{in}, {} };
+
+	for (const String& s : s)
+		std::cout << s << std::endl;
+}
+
+
+================================================
+STL.cpp:, 2024-05-16 목요일 오후 2:08:27
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 16일 목요일			(11주 2일)
+// 
+// Assoiative Container - set / map
+// 
+// - equivalence(동등성, <) / equality(상등성, ==)
+// - default 정렬기준은 operator<
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <set>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+bool 길이오름차순(const String& a, const String& b)
+{
+	return a.getLen() < b.getLen();
+}
+
+//--------
+int main()
+//--------
+{
+	save("STL.cpp");
+	
+	std::ifstream in{ "STL.cpp" };
+
+	std::set<String, bool (*)(const String&, const String&)> s{ std::istream_iterator<String>{in}, {}, 길이오름차순 };
+
+	for (const String& s : s)
+		std::cout << s << std::endl;
+}
+
+
+================================================
+STL.cpp:, 2024-05-16 목요일 오후 2:12:14
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 16일 목요일			(11주 2일)
+// 
+// Assoiative Container - set / map
+// 
+// - equivalence(동등성, <) / equality(상등성, ==)
+// - default 정렬기준은 operator<
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <set>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+class 길이오름차순
+{
+public:
+	bool operator()(const String& a, const String& b) const
+	{
+		return a.getLen() < b.getLen();
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	save("STL.cpp");
+	
+	std::ifstream in{ "STL.cpp" };
+
+	//			자료형, type
+	std::set<String, 길이오름차순> s{ std::istream_iterator<String>{in}, {} };
+
+	for (const String& s : s)
+		std::cout << s << std::endl;
+}
+
+
+================================================
+STL.cpp:, 2024-05-16 목요일 오후 2:13:27
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 16일 목요일			(11주 2일)
+// 
+// Assoiative Container - set / map
+// 
+// - equivalence(동등성, <) / equality(상등성, ==)
+// - default 정렬기준은 operator<
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <set>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+class 길이오름차순
+{
+public:
+	bool operator()(const String& a, const String& b) const
+	{
+		return a.getLen() < b.getLen();
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	save("STL.cpp");
+	
+	std::ifstream in{ "STL.cpp" };
+
+	//			자료형, type
+	std::multiset<String, 길이오름차순> s{ std::istream_iterator<String>{in}, {} };
+
+	for (const String& s : s)
+		std::cout << s << std::endl;
+}
+
+
+================================================
+STL.cpp:, 2024-05-16 목요일 오후 2:23:45
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 16일 목요일			(11주 2일)
+// 
+// Assoiative Container - set / map
+// 
+// - equivalence(동등성, <) / equality(상등성, ==)
+// 
+// - default 정렬기준은 operator<
+// - 함수객체
+// - less<Strings> specialization
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <set>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+class 길이오름차순
+{
+public:
+	bool operator()(const String& a, const String& b) const
+	{
+		return a.getLen() < b.getLen();
+	}
+};
+
+template <>
+struct std::less<String> {
+	// 영단어가 먼저 나온 후 한글 단어가 나온다.
+public:
+	bool operator()(const String& a, const String& b) const {
+		// a/b --> 영/영, 영/한, 한/영, 한/한
+		// 한/영 인 경우만 바꾼다.
+		if (!isalpha(*a.begin()) && isalpha(*b.begin()))
+			return false;
+		return true;
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	save("STL.cpp");
+	
+	std::ifstream in{ "STL.cpp" };
+
+	std::multiset<String> s{ std::istream_iterator<String>{in}, {} };
+	
+	for (const String& s : s)
+		std::cout << s << std::endl;
+}
+
+
+================================================
+STL.cpp:, 2024-05-16 목요일 오후 2:24:49
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 16일 목요일			(11주 2일)
+// 
+// Assoiative Container - set / map
+// 
+// - equivalence(동등성, <) / equality(상등성, ==)
+// 
+// - default 정렬기준은 operator<
+// - 함수객체
+// - less<Strings> specialization
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <set>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+class 길이오름차순
+{
+public:
+	bool operator()(const String& a, const String& b) const
+	{
+		return a.getLen() < b.getLen();
+	}
+};
+
+template <>
+struct std::less<String> {
+	// 영단어가 먼저 나온 후 한글 단어가 나온다.
+public:
+	bool operator()(const String& a, const String& b) const {
+		// a/b --> 영/영, 영/한, 한/영, 한/한
+		// 한/영 인 경우만 바꾼다.
+		if (!isalpha(*a.begin()) && isalpha(*b.begin()))
+			return false;
+		return true;
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	save("STL.cpp");
+	
+	std::ifstream in{ "STL.cpp" };
+
+	std::multiset<String> s{ std::istream_iterator<String>{in}, {} };
+	
+	for (const String& s : s)
+		std::cout << s << std::endl;
+}
+
+
+================================================
+STL.cpp:, 2024-05-16 목요일 오후 2:48:10
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 16일 목요일			(11주 2일)
+// 
+// Assoiative Container - set / map
+// 
+// - equivalence(동등성, <) / equality(상등성, ==)
+// 
+// - default 정렬기준은 operator<
+// - 함수객체
+// - less<Strings> specialization
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <set>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	save("STL.cpp");
+	
+	std::ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (not in)
+		return 0;
+
+	std::set<String> s{ std::istream_iterator<String>{in},{} };
+
+	std::cout << "읽은 단어 수: " << s.size() << std::endl;
+
+	for (const String& word : s)
+		std::cout << word << "  ";
+	std::cout << std::endl;
+
+}
+
+
+================================================
+STL.cpp:, 2024-05-16 목요일 오후 2:48:38
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 16일 목요일			(11주 2일)
+// 
+// Assoiative Container - set / map
+// 
+// - equivalence(동등성, <) / equality(상등성, ==)
+// 
+// - default 정렬기준은 operator<
+// - 함수객체
+// - less<Strings> specialization
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <set>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	save("STL.cpp");
+	
+	std::ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (not in)
+		return 0;
+
+	std::set<String> s{ std::istream_iterator<String>{in},{} };
+
+	for (const String& word : s)
+		std::cout << word << "  ";
+	std::cout << std::endl;
+
+	std::cout << "읽은 단어 수: " << s.size() << std::endl;
+}
+
+
+================================================
+STL.cpp:, 2024-05-16 목요일 오후 2:50:23
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 16일 목요일			(11주 2일)
+// 
+// Assoiative Container - set / map
+// 
+// - equivalence(동등성, <) / equality(상등성, ==)
+// 
+// - default 정렬기준은 operator<
+// - 함수객체
+// - less<Strings> specialization
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <set>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	save("STL.cpp");
+	
+	std::ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (not in)
+		return 0;
+
+	std::set<String> s{ std::istream_iterator<String>{in},{} };	// 동일한 단어는 두 번 넣지 않음
+
+	for (const String& word : s)
+		std::cout << word << "  ";
+	std::cout << std::endl;
+
+	std::cout << "읽은 단어 수: " << s.size() << std::endl;
+}
+
+
+================================================
+STL.cpp:, 2024-05-16 목요일 오후 2:50:51
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 16일 목요일			(11주 2일)
+// 
+// Assoiative Container - set / map
+// 
+// - equivalence(동등성, <) / equality(상등성, ==)
+// 
+// - default 정렬기준은 operator<
+// - 함수객체
+// - less<Strings> specialization
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <set>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	save("STL.cpp");
+	
+	std::ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (not in)
+		return 0;
+
+	std::multiset<String> s{ std::istream_iterator<String>{in},{} };
+
+	for (const String& word : s)
+		std::cout << word << "  ";
+	std::cout << std::endl;
+
+	std::cout << "읽은 단어 수: " << s.size() << std::endl;
+}
+
+
+================================================
+STL.cpp:, 2024-05-16 목요일 오후 2:52:43
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 16일 목요일			(11주 2일)
+// 
+// Assoiative Container - set / map
+// 
+// - equivalence(동등성, <) / equality(상등성, ==)
+// 
+// - default 정렬기준은 operator<
+// - 함수객체
+// - less<Strings> specialization
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <set>
+#include <fstream>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	save("STL.cpp");
+	
+	std::ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (not in)
+		return 0;
+
+	std::multiset<String> s{ std::istream_iterator<String>{in},{} };
+	std::cout << "앨리스에서 사용한 단어 개수: " << s.size() << std::endl;
+}
+
+
+================================================
+STL.cpp:, 2024-05-16 목요일 오후 3:01:02
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 16일 목요일			(11주 2일)
+// 
+// Assoiative Container - set / map
+// 
+// - equivalence(동등성, <) / equality(상등성, ==)
+// 
+// - default 정렬기준은 operator<
+// - 함수객체
+// - less<Strings> specialization
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <set>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	save("STL.cpp");
+	
+	std::ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (not in)
+		return 0;
+
+	std::multiset<String> s{ std::istream_iterator<String>{in},{} };
+	std::cout << "앨리스에서 사용한 단어 개수: " << s.size() << std::endl;
+
+	// [문제] 사용자가 입력한 단어가 이 소설에 있는 단어인지 알려주자.
+
+	while (true) {
+		std::cout << "찾을 단어는? ";
+		String word;
+		std::cin >> word;
+
+		auto p = find(s.begin(), s.end(), word);
+
+		if (p != s.end())
+			std::cout << word << "는 있는 단어입니다." << std::endl;
+		else
+			std::cout << word << "는 사용하지 않았습니다." << std::endl;
+	}
+}
+
+
+================================================
+STL.cpp:, 2024-05-16 목요일 오후 3:03:23
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 16일 목요일			(11주 2일)
+// 
+// Assoiative Container - set / map
+// 
+// - equivalence(동등성, <) / equality(상등성, ==)
+// 
+// - default 정렬기준은 operator<
+// - 함수객체
+// - less<Strings> specialization
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <set>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	save("STL.cpp");
+	
+	std::ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (not in)
+		return 0;
+
+	std::multiset<String> s{ std::istream_iterator<String>{in},{} };
+	std::cout << "앨리스에서 사용한 단어 개수: " << s.size() << std::endl;
+
+	// [문제] 사용자가 입력한 단어가 이 소설에 있는 단어인지 알려주자.
+
+	while (true) {
+		std::cout << "찾을 단어는? ";
+		String word;
+		std::cin >> word;
+
+		auto p = s.find(word);
+
+		if (p != s.end())
+			std::cout << word << "는 있는 단어입니다." << std::endl;
+		else
+			std::cout << word << "는 사용하지 않았습니다." << std::endl;
+	}
+}
+
+
+================================================
+STL.cpp:, 2024-05-16 목요일 오후 3:05:31
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 16일 목요일			(11주 2일)
+// 
+// Assoiative Container - set / map
+// 
+// - equivalence(동등성, <) / equality(상등성, ==)
+// 
+// - default 정렬기준은 operator<
+// - 함수객체
+// - less<Strings> specialization
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <set>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	save("STL.cpp");
+	
+	std::ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (not in)
+		return 0;
+
+	std::multiset<String> s{ std::istream_iterator<String>{in},{} };
+	std::cout << "앨리스에서 사용한 단어 개수: " << s.size() << std::endl;
+
+	// [문제] 사용자가 입력한 단어가 이 소설에 있는 단어인지 알려주자.
+
+	while (true) {
+		std::cout << "찾을 단어는? ";
+		String word;
+		std::cin >> word;
+
+		auto cnt = s.count(word);
+
+		if (cnt)
+			std::cout << word << "를 " << cnt << "번 사용했습니다." << std::endl;
+		else
+			std::cout << word << "는 사용하지 않았습니다." << std::endl;
+	}
+}
+
+
+================================================
+STL.cpp:, 2024-05-16 목요일 오후 3:12:43
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 16일 목요일			(11주 2일)
+// 
+// Assoiative Container - set / map
+// 
+// - equivalence(동등성, <) / equality(상등성, ==)
+// 
+// - default 정렬기준은 operator<
+// - 함수객체
+// - less<Strings> specialization
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <set>
+#include <fstream>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	save("STL.cpp");
+	
+	std::ifstream in{ "이상한 나라의 앨리스.txt" };
+	if (not in)
+		return 0;
+
+	std::multiset<String> s{ std::istream_iterator<String>{in},{} };
+	std::cout << "앨리스에서 사용한 단어 개수: " << s.size() << std::endl;
+
+	// [문제] 사용자가 입력한 문자를 포함하는 모든 단어를 출력하라.
+
+	while (true) {
+		std::cout << "찾을 단어는? ";
+		String word;
+		std::cin >> word;
+
+		auto cnt = s.count(word);
+
+		if (cnt)
+			std::cout << word << "를 " << cnt << "번 사용했습니다." << std::endl;
+		else
+			std::cout << word << "는 사용하지 않았습니다." << std::endl;
+	}
+}
