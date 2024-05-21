@@ -1,20 +1,17 @@
 //------------------------------------------------------------------------
-// 2024.	1학기 STL 화56목56      5월 16일 목요일			(11주 2일)
+// 2024.	1학기 STL 화56목56      5월 21일 화요일			(12주 1일)
 // 
 // Assoiative Container - set / map
 // 
-// - equivalence(동등성, <) / equality(상등성, ==)
-// 
-// - default 정렬기준은 operator<
-// - 함수객체
-// - less<Strings> specialization
+// map<key, value> - dictionary
 //  
 // 6월  6일 목(현충일): 강의 예정
 // 6월 13일 목(15주 2일): 기말 시험
 //------------------------------------------------------------------------
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
-#include <set>
+#include <map>
+#include <list>
 #include <fstream>
 #include <algorithm>
 #include "save.h"
@@ -28,26 +25,24 @@ int main()
 //--------
 {
 	save("STL.cpp");
+
+	// [문제] 소설에 사용된 영문자와 그 사용횟수를 횟수 기준 내림차순으로 출력하라.
+	// 대문자는 소문자로 변환한다.
 	
+	// 내 답
+	/*std::map<char, int> cim;
+
 	std::ifstream in{ "이상한 나라의 앨리스.txt" };
-	if (not in)
-		return 0;
 
-	std::multiset<String> s{ std::istream_iterator<String>{in},{} };
-	std::cout << "앨리스에서 사용한 단어 개수: " << s.size() << std::endl;
-
-	// [문제] 사용자가 입력한 문자를 포함하는 모든 단어를 출력하라.
-
-	while (true) {
-		std::cout << "찾을 단어는? ";
-		String word;
-		std::cin >> word;
-
-		auto cnt = s.count(word);
-
-		if (cnt)
-			std::cout << word << "를 " << cnt << "번 사용했습니다." << std::endl;
-		else
-			std::cout << word << "는 사용하지 않았습니다." << std::endl;
+	char c;
+	while (in >> c) {
+		if (std::isalpha(c))
+			cim[tolower(c)]++;
 	}
+
+	for (auto [소문자, 횟수] : cim) {
+		std::sort(cim.begin(), cim.end());
+		std::cout << 소문자 << ": " << 횟수 << std::endl;
+	}*/
+
 }
