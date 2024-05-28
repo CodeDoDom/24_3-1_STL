@@ -1,24 +1,37 @@
 //------------------------------------------------------------------------
-// 2024.	1학기 STL 화56목56      5월 21일 화요일			(12주 1일)
+// 2024.	1학기 STL 화56목56      5월 23일 목요일			(12주 2일)
 // 
-// Assoiative Container - set / map
-// 
-// map<key, value> - dictionary
+// Unordered Assoiative Container - unordered_set / unordered_map
+// - 순서가 없다.
+// - 메모리를 어떻게 사용하여 복잡도가 0(1)인가
+// - 내가 만든 String을 저장하려면 어떻게 해야 되는가.
 //  
 // 6월  6일 목(현충일): 강의 예정
 // 6월 13일 목(15주 2일): 기말 시험
 //------------------------------------------------------------------------
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
-#include <map>
-#include <list>
-#include <fstream>
-#include <algorithm>
+#include <unordered_set>
+#include <print>
 #include "save.h"
 #include "String.h"
 //using namespace std;	// 사용하지 않고 코딩
 
 extern bool 관찰;
+
+void print_us(const std::unordered_multiset<int>& us)
+{
+	std::cout << "언오더드 멀티셋의 메모리 구조" << std::endl;
+
+	for (int i = 0; i < us.bucket_count(); ++i) {
+		std::print("[{:3}]", i);
+		for (auto p = us.begin(i); p != us.end(i); ++p) {
+			std::cout << ": " << *p;
+		}
+		std::cout << std::endl;
+	}
+
+}
 
 //--------
 int main()
@@ -26,23 +39,16 @@ int main()
 {
 	save("STL.cpp");
 
-	// [문제] 소설에 사용된 영문자와 그 사용횟수를 횟수 기준 내림차순으로 출력하라.
-	// 대문자는 소문자로 변환한다.
-	
-	// 내 답
-	/*std::map<char, int> cim;
+	std::unordered_multiset<int> us{ 3,1,2,4,10 };
 
-	std::ifstream in{ "이상한 나라의 앨리스.txt" };
+	while (true) {
+		std::cout << "추가할 값은? ";
+		int num;
+		std::cin >> num;
+		us.insert(num);
 
-	char c;
-	while (in >> c) {
-		if (std::isalpha(c))
-			cim[tolower(c)]++;
+		print_us(us);
+
+		std::cout << std::endl;
 	}
-
-	for (auto [소문자, 횟수] : cim) {
-		std::sort(cim.begin(), cim.end());
-		std::cout << 소문자 << ": " << 횟수 << std::endl;
-	}*/
-
 }
