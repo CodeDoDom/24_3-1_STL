@@ -18219,3 +18219,974 @@ int main()
 
 	save("STL.cpp");
 }
+
+
+================================================
+STL.cpp:, 2024-05-30 목요일 오후 1:59:00
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 30일 목요일			(13주 2일)
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+// 
+// Algorithm
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::vector<int> v{ 1, 3, 5, 7, 9 };
+
+	// v에 홀수만 있나?
+	bool b = std::all_of(v.begin(), v.end(), [](int n) {return n & 1; });
+
+	if (b)
+		std::cout << "모두 홀수" << std::endl;
+	else
+		std::cout << "다 홀수인 것은 아니다." << std::endl;
+	
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-05-30 목요일 오후 1:59:10
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 30일 목요일			(13주 2일)
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+// 
+// Algorithm
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::vector<int> v{ 1, 3, 5, 7, 9, -2 };
+
+	// v에 홀수만 있나?
+	bool b = std::all_of(v.begin(), v.end(), [](int n) {return n & 1; });
+
+	if (b)
+		std::cout << "모두 홀수" << std::endl;
+	else
+		std::cout << "다 홀수인 것은 아니다." << std::endl;
+	
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-05-30 목요일 오후 2:20:55
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 30일 목요일			(13주 2일)
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+// 
+// Algorithm
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//template <class 반복자, class 단항조건자>
+//bool my_all_of(반복자 c, 반복자 d, 단항조건자 p) {
+//	if (c == p)
+//		return true;
+//	while (c != p) {
+//		if(not p (c))
+//			return false
+//		c++;
+//		return true;
+//	}
+//}
+
+//--------
+int main()
+//--------
+{
+	//std::vector<int> v{ 1, 3, 5, 7, 9, -2 };
+
+	//// v에 홀수만 있나?
+	//bool b = my_all_of(v.begin(), v.end(), [](int n) {return n & 1; });
+
+	//if (b)
+	//	std::cout << "모두 홀수" << std::endl;
+	//else
+	//	std::cout << "다 홀수인 것은 아니다." << std::endl;
+	//
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-05-30 목요일 오후 2:26:26
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 30일 목요일			(13주 2일)
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+// 
+// Algorithm
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <random>
+#include <numeric>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+std::default_random_engine dre{ std::random_device{}() };
+
+//--------
+int main()
+//--------
+{
+	// 로또 번호 생성
+	std::vector<int> v(45);
+	iota(v.begin(), v.end(), 1);
+
+	std::cout << "이번 주 번호: ";
+	std::sample(v.begin(), v.end(), std::ostream_iterator<int>{std::cout, " "}, 6, dre);
+	std::cout << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-05-30 목요일 오후 2:32:10
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 30일 목요일			(13주 2일)
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+// 
+// Algorithm
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <string>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	// 글자가 흘러가는 전광판을 만드시오.
+	// "2024_5_30 STL algorithm 한글은 깨질 수 있다."
+
+	std::string s{ "2024_5_30 STL algorithm 한글은 깨질 수 있다." };
+
+	for (int i = 0; i < 10; i++)
+		std::cout << std::endl;
+
+	std::print("{}", s);
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-05-30 목요일 오후 2:32:35
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 30일 목요일			(13주 2일)
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+// 
+// Algorithm
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <string>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	// 글자가 흘러가는 전광판을 만드시오.
+	// "2024_5_30 STL algorithm 한글은 깨질 수 있다."
+
+	std::string s{ "2024_5_30 STL algorithm 한글은 깨질 수 있다." };
+
+	for (int i = 0; i < 10; i++)
+		std::cout << std::endl;
+
+	std::print("{:^80}", s);
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-05-30 목요일 오후 2:44:00
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 30일 목요일			(13주 2일)
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+// 
+// 정렬관련 Algorithm - 복잡도 순으로
+// partition
+// nth_element
+// partial_sort
+// sort
+// stable_sort
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <random>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+//--------
+int main()
+//--------
+{
+	std::vector<int> v(100);
+	for (int i = 0; i < v.size(); ++i)
+		v[i] = i + 1;
+
+	for (int num : v)
+		std::print("{:4}", num);
+	std::cout << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-05-30 목요일 오후 2:50:33
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 30일 목요일			(13주 2일)
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+// 
+// 정렬관련 Algorithm - 복잡도 순으로
+// partition
+// nth_element
+// partial_sort
+// sort
+// stable_sort
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <random>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+std::random_device rd;
+std::default_random_engine dre{rd()};
+
+//--------
+int main()
+//--------
+{
+	std::vector<int> v(100);
+	for (int i = 0; i < v.size(); ++i)
+		v[i] = i + 1;
+
+	{
+		// partition - 조건에 맞는 것과 아닌 것으로 분리
+		// 홀짝으로 분리하고 각각 출력하라.
+
+		shuffle(v.begin(), v.end(), dre);
+		std::cout << "partition 하기 전" << std::endl;
+
+		for (int num : v)
+			std::print("{:4}", num);
+		std::cout << std::endl;
+		std::cout << std::endl;
+	
+		auto p = std::partition(v.begin(), v.end(), [](int n) {return n & 1; });		// 조건에 맞지 않는 것의 위치를 return
+		std::cout << "홀수" << std::endl;
+		for (auto i = v.begin(); i != p; ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl;
+		std::cout << "짝수" << std::endl;
+		for (auto i = p; i != v.end(); ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl << std::endl;
+	}
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-05-30 목요일 오후 2:56:50
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 30일 목요일			(13주 2일)
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+// 
+// 정렬관련 Algorithm - 복잡도 순으로
+// partition			- 조건에 따라 분리
+// nth_element			- n등까지와 나머지로 분리
+// partial_sort			- n등까지는 정렬된 상태로 나머지는 무관
+// sort					- 전체 정렬
+// stable_sort
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <random>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+std::random_device rd;
+std::default_random_engine dre{rd()};
+
+//--------
+int main()
+//--------
+{
+	std::vector<int> v(100);
+	for (int i = 0; i < v.size(); ++i)
+		v[i] = i + 1;
+
+	{
+		// partition - 조건에 맞는 것과 아닌 것으로 분리
+		// 홀짝으로 분리하고 각각 출력하라.
+
+		shuffle(v.begin(), v.end(), dre);
+		std::cout << "partition 하기 전" << std::endl;
+
+		for (int num : v)
+			std::print("{:4}", num);
+		std::cout << std::endl;
+		std::cout << std::endl;
+	
+		auto p = std::partition(v.begin(), v.end(), [](int n) {return n & 1; });		// 조건에 맞지 않는 것의 위치를 return
+		std::cout << "홀수" << std::endl;
+		for (auto i = v.begin(); i != p; ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl;
+		std::cout << "짝수" << std::endl;
+		for (auto i = p; i != v.end(); ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl << std::endl;
+	}
+
+	{
+		// nth_element - 
+		// n번째와 나머지로 분리.
+
+		shuffle(v.begin(), v.end(), dre);
+		std::cout << "nth_element 하기 전" << std::endl;
+
+		for (int num : v)
+			std::print("{:4}", num);
+		std::cout << std::endl << std::endl;
+
+		auto nth = v.begin() + 30;
+		std::nth_element(v.begin(), nth, v.end());
+		std::cout << "30등까지" << std::endl;
+		for (auto i = v.begin(); i != nth; ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl;
+
+		std::cout << "나머지" << std::endl;
+		for (auto i = nth; i != v.end(); ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl << std::endl;
+	}
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-05-30 목요일 오후 2:59:03
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 30일 목요일			(13주 2일)
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+// 
+// 정렬관련 Algorithm - 복잡도 순으로
+// partition			- 조건에 따라 분리
+// nth_element			- n등까지와 나머지로 분리
+// partial_sort			- n등까지는 정렬된 상태로 나머지는 무관
+// sort					- 전체 정렬
+// stable_sort
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <random>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+std::random_device rd;
+std::default_random_engine dre{rd()};
+
+//--------
+int main()
+//--------
+{
+	std::vector<int> v(100);
+	for (int i = 0; i < v.size(); ++i)
+		v[i] = i + 1;
+
+	{
+		// partition - 조건에 맞는 것과 아닌 것으로 분리
+		// 홀짝으로 분리하고 각각 출력하라.
+
+		shuffle(v.begin(), v.end(), dre);
+		std::cout << "partition 하기 전" << std::endl;
+
+		for (int num : v)
+			std::print("{:4}", num);
+		std::cout << std::endl;
+		std::cout << std::endl;
+	
+		auto p = std::partition(v.begin(), v.end(), [](int n) {return n & 1; });		// 조건에 맞지 않는 것의 위치를 return
+		std::cout << "홀수" << std::endl;
+		for (auto i = v.begin(); i != p; ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl;
+		std::cout << "짝수" << std::endl;
+		for (auto i = p; i != v.end(); ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl << std::endl;
+	}
+
+	{
+		// nth_element - 
+		// n번째와 나머지로 분리.
+
+		shuffle(v.begin(), v.end(), dre);
+		std::cout << "nth_element 하기 전" << std::endl;
+
+		for (int num : v)
+			std::print("{:4}", num);
+		std::cout << std::endl << std::endl;
+
+		auto nth = v.begin() + 30;
+		std::nth_element(v.begin(), nth, v.end());
+		std::cout << "30등까지" << std::endl;
+		for (auto i = v.begin(); i != nth; ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl;
+
+		std::cout << "나머지" << std::endl;
+		for (auto i = nth; i != v.end(); ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl << std::endl;
+	}
+
+	{
+		// partial_sort - 
+		// n번째까지만 정렬.
+
+		shuffle(v.begin(), v.end(), dre);
+		std::cout << "partial_sort 하기 전" << std::endl;
+
+		for (int num : v)
+			std::print("{:4}", num);
+		std::cout << std::endl << std::endl;
+
+		auto nth = v.begin() + 30;
+		std::partial_sort(v.begin(), nth, v.end());
+		std::cout << "30등까지" << std::endl;
+		for (auto i = v.begin(); i != nth; ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl;
+
+		std::cout << "나머지" << std::endl;
+		for (auto i = nth; i != v.end(); ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl << std::endl;
+	}
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-05-30 목요일 오후 3:00:55
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 30일 목요일			(13주 2일)
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+// 
+// 정렬관련 Algorithm - 복잡도 순으로
+// partition			- 조건에 따라 분리
+// nth_element			- n등까지와 나머지로 분리
+// partial_sort			- n등까지는 정렬된 상태로 나머지는 무관
+// sort					- 전체 정렬
+// stable_sort
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <random>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+std::random_device rd;
+std::default_random_engine dre{rd()};
+
+//--------
+int main()
+//--------
+{
+	std::vector<int> v(100);
+	for (int i = 0; i < v.size(); ++i)
+		v[i] = i + 1;
+
+	{
+		// partition - 조건에 맞는 것과 아닌 것으로 분리
+		// 홀짝으로 분리하고 각각 출력하라.
+
+		shuffle(v.begin(), v.end(), dre);
+		std::cout << "partition 하기 전" << std::endl;
+
+		for (int num : v)
+			std::print("{:4}", num);
+		std::cout << std::endl;
+		std::cout << std::endl;
+	
+		auto p = std::partition(v.begin(), v.end(), [](int n) {return n & 1; });		// 조건에 맞지 않는 것의 위치를 return
+		std::cout << "홀수" << std::endl;
+		for (auto i = v.begin(); i != p; ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl;
+		std::cout << "짝수" << std::endl;
+		for (auto i = p; i != v.end(); ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl << std::endl;
+	}
+
+	{
+		// nth_element - 
+		// n번째와 나머지로 분리.
+
+		shuffle(v.begin(), v.end(), dre);
+		std::cout << "nth_element 하기 전" << std::endl;
+
+		for (int num : v)
+			std::print("{:4}", num);
+		std::cout << std::endl << std::endl;
+
+		auto nth = v.begin() + 30;
+		std::nth_element(v.begin(), nth, v.end());
+		std::cout << "30등까지" << std::endl;
+		for (auto i = v.begin(); i != nth; ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl;
+
+		std::cout << "나머지" << std::endl;
+		for (auto i = nth; i != v.end(); ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl << std::endl;
+	}
+
+	{
+		// partial_sort - 
+		// n번째까지만 정렬.
+
+		shuffle(v.begin(), v.end(), dre);
+		std::cout << "partial_sort 하기 전" << std::endl;
+
+		for (int num : v)
+			std::print("{:4}", num);
+		std::cout << std::endl << std::endl;
+
+		auto nth = v.begin() + 30;
+		std::partial_sort(v.begin(), nth, v.end());
+		std::cout << "30등까지" << std::endl;
+		for (auto i = v.begin(); i != nth; ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl;
+
+		std::cout << "나머지" << std::endl;
+		for (auto i = nth; i != v.end(); ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl << std::endl;
+	}
+
+
+	{
+		// sort - 
+		// 전체 정렬.
+
+		shuffle(v.begin(), v.end(), dre);
+		std::cout << "sort 하기 전" << std::endl;
+
+		for (int num : v)
+			std::print("{:4}", num);
+		std::cout << std::endl << std::endl;
+
+		std::sort(v.begin(), v.end());
+		std::cout << "전체 정렬" << std::endl;
+		for (auto i = v.begin(); i != v.end(); ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl << std::endl;
+	}
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-05-30 목요일 오후 3:04:56
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 30일 목요일			(13주 2일)
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+// 
+// 정렬관련 Algorithm - 복잡도 순으로
+// partition			- 조건에 따라 분리
+// nth_element			- n등까지와 나머지로 분리
+// partial_sort			- n등까지는 정렬된 상태로 나머지는 무관
+// sort					- 전체 정렬
+// stable_sort
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <print>
+#include <random>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+std::random_device rd;
+std::default_random_engine dre{rd()};
+
+//--------
+int main()
+//--------
+{
+	std::vector<int> v(100);
+	for (int i = 0; i < v.size(); ++i)
+		v[i] = i + 1;
+
+	{
+		// partition - 조건에 맞는 것과 아닌 것으로 분리
+		// 홀짝으로 분리하고 각각 출력하라.
+
+		shuffle(v.begin(), v.end(), dre);
+		std::cout << "partition 하기 전" << std::endl;
+
+		for (int num : v)
+			std::print("{:4}", num);
+		std::cout << std::endl;
+		std::cout << std::endl;
+	
+		auto p = std::partition(v.begin(), v.end(), [](int n) {return n & 1; });		// 조건에 맞지 않는 것의 위치를 return
+		std::cout << "홀수" << std::endl;
+		for (auto i = v.begin(); i != p; ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl;
+		std::cout << "짝수" << std::endl;
+		for (auto i = p; i != v.end(); ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl << std::endl;
+	}
+
+	{
+		// nth_element - 
+		// n번째와 나머지로 분리.
+
+		shuffle(v.begin(), v.end(), dre);
+		std::cout << "nth_element 하기 전" << std::endl;
+
+		for (int num : v)
+			std::print("{:4}", num);
+		std::cout << std::endl << std::endl;
+
+		auto nth = v.begin() + 30;
+		std::nth_element(v.begin(), nth, v.end());
+		std::cout << "30등까지" << std::endl;
+		for (auto i = v.begin(); i != nth; ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl;
+
+		std::cout << "나머지" << std::endl;
+		for (auto i = nth; i != v.end(); ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl << std::endl;
+	}
+
+	{
+		// partial_sort - 
+		// n번째까지만 정렬.
+
+		shuffle(v.begin(), v.end(), dre);
+		std::cout << "partial_sort 하기 전" << std::endl;
+
+		for (int num : v)
+			std::print("{:4}", num);
+		std::cout << std::endl << std::endl;
+
+		auto nth = v.begin() + 30;
+		std::partial_sort(v.begin(), nth, v.end());
+		std::cout << "30등까지" << std::endl;
+		for (auto i = v.begin(); i != nth; ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl;
+
+		std::cout << "나머지" << std::endl;
+		for (auto i = nth; i != v.end(); ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl << std::endl;
+	}
+
+
+	{
+		// sort - 
+		// 전체 정렬.
+
+		shuffle(v.begin(), v.end(), dre);
+		std::cout << "sort 하기 전" << std::endl;
+
+		for (int num : v)
+			std::print("{:4}", num);
+		std::cout << std::endl << std::endl;
+
+		std::sort(v.begin(), v.end());
+		std::cout << "전체 정렬" << std::endl;
+		for (auto i = v.begin(); i != v.end(); ++i)
+			std::print("{:4}", *i);
+		std::cout << std::endl << std::endl;
+	}
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-05-30 목요일 오후 3:10:32
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 30일 목요일			(13주 2일)
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+// 
+// 정렬관련 Algorithm - 복잡도 순으로
+// partition			- 조건에 따라 분리
+// nth_element			- n등까지와 나머지로 분리
+// partial_sort			- n등까지는 정렬된 상태로 나머지는 무관
+// sort					- 전체 정렬
+// stable_sort
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <algorithm>
+#include <print>
+#include <random>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+std::random_device rd;
+std::default_random_engine dre{rd()};
+std::uniform_int_distribution uid{ 1, 50 };
+//std::uniform_int_distribution uidC{ 'A', 'Z' };
+
+struct Dog {
+	char c;
+	int n;
+
+	Dog() {
+		//c = uidC(dre);
+		n = uid(dre);
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	// stable_sort
+
+	//std::array<Dog, 100> dogs;
+
+	//std::sort(dogs.begin(), dogs.end(), [](const Dog& a, const Dog& b) {
+	//	return a.c < b.c;
+	//	});
+
+	//for (auto [글자, 숫자] : dogs)
+	//	std::cout << 글자 << " - " << 숫자 << std::endl;
+
+	save("STL.cpp");
+}
+
+
+================================================
+STL.cpp:, 2024-05-30 목요일 오후 3:10:47
+================================================
+
+//------------------------------------------------------------------------
+// 2024.	1학기 STL 화56목56      5월 30일 목요일			(13주 2일)
+//  
+// 6월  6일 목(현충일): 강의 예정
+// 6월 13일 목(15주 2일): 기말 시험
+// 
+// 정렬관련 Algorithm - 복잡도 순으로
+// partition			- 조건에 따라 분리
+// nth_element			- n등까지와 나머지로 분리
+// partial_sort			- n등까지는 정렬된 상태로 나머지는 무관
+// sort					- 전체 정렬
+// stable_sort
+//------------------------------------------------------------------------
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <array>
+#include <algorithm>
+#include <print>
+#include <random>
+#include "save.h"
+#include "String.h"
+//using namespace std;	// 사용하지 않고 코딩
+
+extern bool 관찰;
+
+std::random_device rd;
+std::default_random_engine dre{rd()};
+std::uniform_int_distribution uid{ 1, 50 };
+//std::uniform_int_distribution uidC{ 'A', 'Z' };
+
+struct Dog {
+	char c;
+	int n;
+
+	Dog() {
+		//c = uidC(dre);
+		n = uid(dre);
+	}
+};
+
+//--------
+int main()
+//--------
+{
+	// stable_sort
+
+	std::array<Dog, 100> dogs;
+
+	std::sort(dogs.begin(), dogs.end(), [](const Dog& a, const Dog& b) {
+		return a.c < b.c;
+		});
+
+	for (auto [글자, 숫자] : dogs)
+		std::cout << 글자 << " - " << 숫자 << std::endl;
+
+	save("STL.cpp");
+}
